@@ -1,0 +1,30 @@
+import { ScatterChart } from './ScatterChart'
+
+type ScatterMetricCardProps = {
+  title: string
+  value: string
+  labels: [string, string, string]
+  className?: string
+}
+
+export function ScatterMetricCard({
+  title,
+  value,
+  labels,
+  className = '',
+}: ScatterMetricCardProps) {
+  return (
+    <article className={`scatter-metric-card ${className}`.trim()}>
+      <h3 className="scatter-metric-card-title">{title}</h3>
+
+      <div className="scatter-metric-card-body">
+        <ScatterChart labels={labels} />
+
+        <div className="scatter-metric-card-data">
+          <span className="scatter-metric-card-value">{value}</span>
+          <span className="scatter-metric-card-label">Group Avg</span>
+        </div>
+      </div>
+    </article>
+  )
+}
