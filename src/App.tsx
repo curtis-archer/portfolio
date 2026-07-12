@@ -1,17 +1,18 @@
-import { Nav } from './components/Nav'
-import { Hero } from './components/Hero'
-import { ProjectGrid } from './components/ProjectGrid'
-import './App.css'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { CompetitiveIntelligencePage } from './pages/CompetitiveIntelligencePage'
+import { HomePage } from './pages/HomePage'
 
 function App() {
   return (
-    <div className="page">
-      <Nav />
-      <div className="page-body">
-        <Hero />
-        <ProjectGrid />
-      </div>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route
+          path="/competitive-intelligence"
+          element={<CompetitiveIntelligencePage />}
+        />
+      </Routes>
+    </BrowserRouter>
   )
 }
 

@@ -1,0 +1,116 @@
+.photo-stack {
+  --photo-scale: min(1, 100cqw / 321px);
+  --photo-w: calc(261px * var(--photo-scale));
+  --photo-h: calc(344px * var(--photo-scale));
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.photo-stack-item {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: var(--photo-w);
+  height: var(--photo-h);
+  border-radius: 6px;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.05);
+  transform: translate(
+      calc(-50% + var(--ox) * var(--photo-scale)),
+      calc(-50% + var(--oy) * var(--photo-scale))
+    )
+    rotate(var(--photo-r));
+  transition: transform 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.photo-stack-item img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+.photo-stack-item--3752 {
+  z-index: 1;
+  --ox: -88px;
+  --oy: -71px;
+  --photo-r: -7.68deg;
+  --ox-hover: -289px;
+  --oy-hover: -279px;
+  --photo-r-hover: -32.28deg;
+}
+
+.photo-stack-item--4071 {
+  z-index: 2;
+  --ox: -106px;
+  --oy: 75px;
+  --photo-r: -16.7deg;
+  --ox-hover: -216px;
+  --oy-hover: 254px;
+  --photo-r-hover: 30deg;
+}
+
+.photo-stack-item--4072 {
+  z-index: 3;
+  --ox: 88px;
+  --oy: -141px;
+  --photo-r: 11.86deg;
+  --ox-hover: 46px;
+  --oy-hover: -373px;
+  --photo-r-hover: 46.25deg;
+}
+
+.photo-stack-item--3753 {
+  z-index: 4;
+  --ox: 55px;
+  --oy: 77px;
+  --photo-r: 11.34deg;
+  --ox-hover: 340px;
+  --oy-hover: -108px;
+  --photo-r-hover: -17.49deg;
+}
+
+.photo-stack-item--3908 {
+  z-index: 5;
+  --ox: 55px;
+  --oy: 127px;
+  --photo-r: 18deg;
+  --ox-hover: 235px;
+  --oy-hover: 295px;
+  --photo-r-hover: 24.56deg;
+}
+
+.project-card-wrap:hover .photo-stack-item,
+.project-card-wrap:focus-within .photo-stack-item {
+  transform: translate(
+      calc(-50% + var(--ox-hover) * var(--photo-scale)),
+      calc(-50% + var(--oy-hover) * var(--photo-scale))
+    )
+    rotate(var(--photo-r-hover));
+}
+
+.project-card-wrap:hover .photo-stack-item--3752,
+.project-card-wrap:focus-within .photo-stack-item--3752 {
+  transition-delay: 0.04s;
+}
+
+.project-card-wrap:hover .photo-stack-item--4071,
+.project-card-wrap:focus-within .photo-stack-item--4071 {
+  transition-delay: 0.1s;
+}
+
+.project-card-wrap:hover .photo-stack-item--4072,
+.project-card-wrap:focus-within .photo-stack-item--4072 {
+  transition-delay: 0.16s;
+}
+
+.project-card-wrap:hover .photo-stack-item--3753,
+.project-card-wrap:focus-within .photo-stack-item--3753 {
+  transition-delay: 0.22s;
+}
+
+.project-card-wrap:hover .photo-stack-item--3908,
+.project-card-wrap:focus-within .photo-stack-item--3908 {
+  transition-delay: 0.28s;
+}

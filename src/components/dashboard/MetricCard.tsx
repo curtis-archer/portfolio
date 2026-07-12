@@ -1,4 +1,5 @@
 import { ChartLine } from './ChartLine'
+import { InteractiveChartLine } from './InteractiveChartLine'
 import { TrendBadge } from './TrendBadge'
 
 const MONTHS = ['Mar', 'May', 'Jul', 'Sep', 'Nov', 'Jan']
@@ -11,6 +12,7 @@ type MetricCardProps = {
   chartId: string
   badge?: string
   className?: string
+  interactiveChart?: boolean
 }
 
 export function MetricCard({
@@ -21,6 +23,7 @@ export function MetricCard({
   chartId,
   badge,
   className = '',
+  interactiveChart = false,
 }: MetricCardProps) {
   return (
     <article className={`metric-card ${className}`.trim()}>
@@ -37,13 +40,19 @@ export function MetricCard({
       <div className="metric-card-value">{value}</div>
       <TrendBadge direction={trend.direction} value={trend.value} />
 
-      <div className="metric-card-chart">
+      <div
+        className={`metric-card-chart${interactiveChart ? ' metric-card-chart--interactive' : ''}`}
+      >
         <div className="metric-card-grid" aria-hidden="true">
           <span />
           <span />
           <span />
         </div>
-        <ChartLine variant={chartVariant} gradientId={chartId} />
+        {interactiveChart && chartVariant === 'orange' ? (
+          <InteractiveChartLine gradientId={chartId} />
+        ) : (
+          <ChartLine variant={chartVariant} gradientId={chartId} />
+        )}
         <div className="metric-card-months">
           {MONTHS.map((month) => (
             <span key={month}>{month}</span>

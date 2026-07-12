@@ -37,6 +37,7 @@ export function ShowcaseStack() {
             title={card.title}
             value={card.value}
             labels={card.labels}
+            interactive={card.className === 'showcase-stack-card--reviews'}
           />
         </div>
       ))}

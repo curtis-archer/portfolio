@@ -34,8 +34,8 @@
 .project-card-dashboard .metric-card:hover {
   z-index: 2;
   box-shadow:
-    0 24px 48px rgba(0, 0, 0, 0.14),
-    0 12px 24px rgba(0, 0, 0, 0.08);
+    0 24px 48px rgba(255, 100, 50, 0.12),
+    0 12px 24px rgba(255, 130, 80, 0.08);
 }
 
 .metric-card--market-share {
@@ -153,19 +153,31 @@
 .metric-card-grid span {
   display: block;
   height: 1px;
-  background: #e5e5e5;
+  opacity: 0.5;
+  background: repeating-linear-gradient(
+    to right,
+    #c2c2c2 0,
+    #c2c2c2 2px,
+    transparent 2px,
+    transparent 6px
+  );
+}
+
+.metric-card-grid span:last-child {
+  background: #c2c2c2;
 }
 
 .chart-line {
   position: absolute;
-  left: -3px;
-  right: -3px;
-  width: calc(100% + 6px);
-  height: 42px;
+  left: 4px;
+  right: 4px;
+  width: auto;
+  height: auto;
 }
 
 .metric-card--market-share .chart-line {
-  top: 39%;
+  top: 26.33%;
+  bottom: 42.16%;
 }
 
 .metric-card--revenue .chart-line,
@@ -183,4 +195,128 @@
   justify-content: space-between;
   font-size: 12px;
   color: #7b7b7b;
+}
+
+.metric-card-chart--interactive {
+  cursor: crosshair;
+}
+
+.interactive-chart {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.interactive-chart .chart-line {
+  top: 26.33%;
+  bottom: 42.16%;
+  left: 4px;
+  right: 4px;
+}
+
+.chart-hover {
+  position: absolute;
+  top: 12px;
+  bottom: 28px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.chart-hover-tooltip {
+  position: absolute;
+  right: calc(100% + 10px);
+  top: 0;
+  width: 232px;
+  border-radius: 7px;
+  overflow: hidden;
+  opacity: 0.95;
+  box-shadow:
+    0 0 1px rgba(0, 0, 0, 0.05),
+    0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.chart-hover--flip .chart-hover-tooltip {
+  right: auto;
+  left: calc(100% + 10px);
+}
+
+.chart-hover-tooltip-date {
+  padding: 8px 12px;
+  background: #171717;
+  border-bottom: 1px solid #656565;
+  font-size: 12px;
+  line-height: 20px;
+  color: #afafaf;
+}
+
+.chart-hover-tooltip-body {
+  padding: 12px;
+  background: #222222;
+}
+
+.chart-hover-tooltip-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.chart-hover-tooltip-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  min-width: 0;
+  font-size: 12px;
+  line-height: 20px;
+  color: #afafaf;
+}
+
+.chart-hover-tooltip-swatch {
+  width: 9px;
+  height: 9px;
+  margin-top: 5px;
+  flex-shrink: 0;
+  background: #f57706;
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+}
+
+.chart-hover-tooltip-value {
+  flex-shrink: 0;
+  font-size: 12px;
+  line-height: 20px;
+  color: #ffffff;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.chart-hover-marker {
+  position: relative;
+  width: 10px;
+  height: 100%;
+  flex-shrink: 0;
+}
+
+.chart-hover-crosshair {
+  position: absolute;
+  left: 4px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #e5e5e5;
+  mix-blend-mode: multiply;
+}
+
+.chart-hover-dot {
+  position: absolute;
+  left: 2px;
+  width: 6px;
+  height: 6px;
+  background: #f57706;
+  border: 1px solid #ffffff;
+  border-radius: 50%;
+  transform: translateY(-50%);
 }

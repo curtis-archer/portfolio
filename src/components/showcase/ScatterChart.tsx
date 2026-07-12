@@ -1,70 +1,107 @@
+import { useState } from 'react'
+import { ProductThumbnail } from './ProductThumbnail'
+import {
+  DOT_FILL,
+  DOT_RADIUS,
+  SCATTER_AXIS_Y,
+  SCATTER_DOTS,
+  SCATTER_TICKS,
+  SCATTER_VIEWBOX,
+  TOOLTIP_DOT_FILL,
+  type ScatterDot,
+} from './scatterConstants'
+
 type ScatterChartProps = {
   labels: [string, string, string]
+  interactive?: boolean
 }
 
-type DotKind = 'gray' | 'orange' | 'orange-lg'
+export function ScatterChart({ labels, interactive = false }: ScatterChartProps) {
+  const [activeDot, setActiveDot] = useState<ScatterDot | null>(null)
 
-const DOTS: Array<{ x: number; kind: DotKind }> = [
-  { x: 0, kind: 'orange' },
-  { x: 2.74, kind: 'orange-lg' },
-  { x: 4.11, kind: 'orange' },
-  { x: 8.21, kind: 'orange' },
-  { x: 12.32, kind: 'orange' },
-  { x: 16.42, kind: 'orange-lg' },
-  { x: 19.16, kind: 'orange' },
-  { x: 23.26, kind: 'orange-lg' },
-  { x: 26, kind: 'gray' },
-  { x: 32.84, kind: 'gray' },
-  { x: 41.05, kind: 'gray' },
-  { x: 43.79, kind: 'gray' },
-  { x: 46.53, kind: 'gray' },
-  { x: 53.37, kind: 'gray' },
-  { x: 64.32, kind: 'gray' },
-  { x: 72.53, kind: 'gray' },
-  { x: 80.73, kind: 'orange-lg' },
-  { x: 94.42, kind: 'gray' },
-  { x: 158.73, kind: 'gray' },
-  { x: 184.73, kind: 'gray' },
-  { x: 223.04, kind: 'gray' },
-]
+  const chartClass = [
+    'scatter-chart',
+    interactive && 'scatter-chart--interactive',
+  ]
+    .filter(Boolean)
+    .join(' ')
 
-const DOT_RADIUS: Record<DotKind, number> = {
-  gray: 4.1,
-  orange: 4.1,
-  'orange-lg': 5.47,
-}
-
-const DOT_FILL: Record<DotKind, string> = {
-  gray: '#D9D9D9',
-  orange: '#FF5E00',
-  'orange-lg': '#FF5E00',
-}
-
-export function ScatterChart({ labels }: ScatterChartProps) {
   return (
-    <div className="scatter-chart">
+    <div
+      className={chartClass}
+      onPointerLeave={interactive ? () => setActiveDot(null) : undefined}
+    >
       <svg
         className="scatter-chart-plot"
-        viewBox="0 0 231 22"
+        viewBox={`0 0 ${SCATTER_VIEWBOX.width} ${SCATTER_VIEWBOX.height}`}
         preserveAspectRatio="xMidYMid meet"
-        aria-hidden="true"
+        aria-hidden={interactive ? undefined : true}
+        role={interactive ? 'img' : undefined}
+        aria-label={interactive ? 'Single axis scatter plot' : undefined}
       >
-        <line x1="0" y1="4.1" x2="231" y2="4.1" stroke="#F0F0F0" strokeWidth="1.37" />
+        <line
+          x1="0"
+          y1={SCATTER_AXIS_Y}
+          x2={SCATTER_VIEWBOX.width}
+          y2={SCATTER_AXIS_Y}
+          stroke="#f0f0f0"
+          strokeWidth="1.23"
+        />
 
-        <line x1="29.7" y1="0" x2="29.7" y2="22" stroke="#F0F0F0" strokeWidth="1.37" />
-        <line x1="117.5" y1="0" x2="117.5" y2="22" stroke="#F0F0F0" strokeWidth="1.37" />
-        <line x1="204.9" y1="0" x2="204.9" y2="22" stroke="#F0F0F0" strokeWidth="1.37" />
+        {SCATTER_TICKS.map((x) => (
+          <line
+            key={x}
+            x1={x}
+            y1="0"
+            x2={x}
+            y2={SCATTER_VIEWBOX.height}
+            stroke="#f0f0f0"
+            strokeWidth="1.23"
+          />
+        ))}
 
-        {DOTS.map((dot, index) => {
+        {SCATTER_DOTS.map((dot, index) => {
           const radius = DOT_RADIUS[dot.kind]
+          const isActive = activeDot === dot
+          const fill = DOT_FILL[dot.kind]
+
           return (
-            <circle
-              key={`${dot.x}-${index}`}
-              cx={dot.x + radius}
-              cy={4.1}
-              r={radius}
-              fill={DOT_FILL[dot.kind]}
-            />
+            <g key={`${dot.cx}-${index}`}>
+              {interactive && (
+                <circle
+                  className="scatter-chart-hit"
+                  cx={dot.cx}
+                  cy={SCATTER_AXIS_Y}
+                  r={8}
+                  onPointerEnter={() => setActiveDot(dot)}
+                  onFocus={() => setActiveDot(dot)}
+                  onBlur={() => setActiveDot(null)}
+                  tabIndex={0}
+                  role="button"
+                  aria-label={`${dot.productName}, ${dot.value} reviews`}
+                />
+              )}
+              {dot.kind === 'orange-lg' && (
+                <circle
+                  className={`scatter-chart-glow${isActive ? ' scatter-chart-glow--active' : ''}`}
+                  cx={dot.cx}
+                  cy={SCATTER_AXIS_Y}
+                  r={radius + 2.5}
+                  fill="none"
+                  stroke={fill}
+                  strokeWidth="1.5"
+                  opacity={isActive ? 0.35 : 0.2}
+                  pointerEvents="none"
+                />
+              )}
+              <circle
+                cx={dot.cx}
+                cy={SCATTER_AXIS_Y}
+                r={radius}
+                fill={fill}
+                pointerEvents="none"
+              />
+            </g>
           )
         })}
       </svg>
@@ -74,6 +111,38 @@ export function ScatterChart({ labels }: ScatterChartProps) {
           <span key={label}>{label}</span>
         ))}
       </div>
+
+      {interactive && activeDot && (
+        <div
+          className={[
+            'scatter-chart-popover',
+            activeDot.cx / SCATTER_VIEWBOX.width < 0.35 && 'scatter-chart-popover--align-left',
+            activeDot.cx / SCATTER_VIEWBOX.width > 0.72 && 'scatter-chart-popover--align-right',
+          ]
+            .filter(Boolean)
+            .join(' ')}
+          style={{ left: `${(activeDot.cx / SCATTER_VIEWBOX.width) * 100}%` }}
+          role="tooltip"
+        >
+          <div className="scatter-chart-tooltip">
+            <div className="scatter-chart-tooltip-body">
+              <div className="scatter-chart-tooltip-row">
+                <div className="scatter-chart-tooltip-asin">
+                  <span
+                    className="scatter-chart-tooltip-dot"
+                    style={{ background: TOOLTIP_DOT_FILL[activeDot.kind] }}
+                    aria-hidden="true"
+                  />
+                  <ProductThumbnail src={activeDot.productImage} />
+                  <p className="scatter-chart-tooltip-name">{activeDot.productName}</p>
+                </div>
+                <span className="scatter-chart-tooltip-value">{activeDot.value}</span>
+              </div>
+            </div>
+            <div className="scatter-chart-tooltip-footer">Click to Inspect</div>
+          </div>
+        </div>
+      )}
     </div>
   )
 }

@@ -5,6 +5,7 @@ type ScatterMetricCardProps = {
   value: string
   labels: [string, string, string]
   className?: string
+  interactive?: boolean
 }
 
 export function ScatterMetricCard({
@@ -12,13 +13,14 @@ export function ScatterMetricCard({
   value,
   labels,
   className = '',
+  interactive = false,
 }: ScatterMetricCardProps) {
   return (
     <article className={`scatter-metric-card ${className}`.trim()}>
       <h3 className="scatter-metric-card-title">{title}</h3>
 
       <div className="scatter-metric-card-body">
-        <ScatterChart labels={labels} />
+        <ScatterChart labels={labels} interactive={interactive} />
 
         <div className="scatter-metric-card-data">
           <span className="scatter-metric-card-value">{value}</span>
