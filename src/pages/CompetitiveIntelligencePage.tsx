@@ -80,44 +80,75 @@ export function CompetitiveIntelligencePage() {
 
         <section className="case-study-gallery" aria-label="Project visuals">
           <div className="case-study-gallery-inner">
-            <div className="case-study-gallery-row case-study-gallery-row--hero">
-              <div className="case-study-media case-study-media--hero">
+            <div className="case-study-gallery-row case-study-gallery-row--focus">
+              <div className="case-study-media case-study-media--focus">
+                <img
+                  src="/assets/competitive-intelligence/CI-Full.png"
+                  alt="Competitive Intelligence dashboard overview for Rotary Cutters"
+                  className="case-study-media-image case-study-media-image--fill"
+                />
+              </div>
+            </div>
+
+            <div className="case-study-gallery-row case-study-gallery-row--pair">
+              <div className="case-study-media case-study-media--bento">
                 <div className="case-study-media-frame">
                   <img
-                    src="/assets/competitive-intelligence/ci-large.png"
-                    srcSet="/assets/competitive-intelligence/ci-large.png 1x, /assets/competitive-intelligence/Ci-large2x.png 2x"
-                    alt="Competitive Intelligence dashboard overview for Rotary Cutters"
+                    src="/assets/competitive-intelligence/ScatterPlot1.png"
+                    alt="Scatter plot comparing product price and revenue with hover tooltip"
+                    className="case-study-media-image"
+                  />
+                </div>
+              </div>
+              <div className="case-study-media case-study-media--bento">
+                <div className="case-study-media-frame">
+                  <img
+                    src="/assets/competitive-intelligence/ScatterPlot2.png"
+                    alt="Scatter plot with product actions menu for competitive analysis"
                     className="case-study-media-image"
                   />
                 </div>
               </div>
             </div>
 
-            <div className="case-study-gallery-row case-study-gallery-row--bento">
-              <div className="case-study-media case-study-media--bento">
+            <div className="case-study-gallery-row case-study-gallery-row--pair">
+              <div className="case-study-media case-study-media--tile">
                 <div className="case-study-media-frame">
                   <img
-                    src="/assets/competitive-intelligence/scatterplot.png"
-                    alt="Competitive Intelligence scatter plot comparing price and revenue across products"
+                    src="/assets/competitive-intelligence/ProductDetails.png"
+                    alt="Product Details modal showing metrics and performance chart"
                     className="case-study-media-image"
                   />
                 </div>
               </div>
-              <div className="case-study-bento-right">
-                <div className="case-study-bento-column">
-                  <div className="case-study-media" aria-hidden="true" />
+              <div className="case-study-media case-study-media--tile">
+                <div className="case-study-media-frame">
+                  <img
+                    src="/assets/competitive-intelligence/AddProducts.png"
+                    alt="Add Products modal for entering ASINs and reviewing selected products"
+                    className="case-study-media-image"
+                  />
                 </div>
-                <div className="case-study-bento-column case-study-bento-column--stack">
-                  <div className="case-study-media case-study-media--tile">
-                    <div className="case-study-media-frame">
-                      <img
-                        src="/assets/competitive-intelligence/Create-Market.png"
-                        alt="Create a Market modal for selecting a seed product"
-                        className="case-study-media-image"
-                      />
-                    </div>
-                  </div>
-                  <div className="case-study-media" aria-hidden="true" />
+              </div>
+            </div>
+
+            <div className="case-study-gallery-row case-study-gallery-row--pair">
+              <div className="case-study-media case-study-media--tile">
+                <div className="case-study-media-frame">
+                  <img
+                    src="/assets/competitive-intelligence/EmptyState.png"
+                    alt="Empty state prompting users to create their first market"
+                    className="case-study-media-image"
+                  />
+                </div>
+              </div>
+              <div className="case-study-media case-study-media--tile">
+                <div className="case-study-media-frame">
+                  <img
+                    src="/assets/competitive-intelligence/Create.png"
+                    alt="Create a Market modal for selecting a seed product"
+                    className="case-study-media-image"
+                  />
                 </div>
               </div>
             </div>
