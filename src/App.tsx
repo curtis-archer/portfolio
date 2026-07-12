@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { AiAnalystWorkflowsPage } from './pages/AiAnalystWorkflowsPage'
 import { CompetitiveIntelligencePage } from './pages/CompetitiveIntelligencePage'
 import { HomePage } from './pages/HomePage'
 
@@ -10,6 +11,10 @@ function App() {
         <Route
           path="/competitive-intelligence"
           element={<CompetitiveIntelligencePage />}
+        />
+        <Route
+          path="/ai-analyst-workflows"
+          element={<AiAnalystWorkflowsPage />}
         />
       </Routes>
     </BrowserRouter>

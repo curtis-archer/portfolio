@@ -3,7 +3,10 @@ import './Nav.css'
 
 export function Nav() {
   const { pathname } = useLocation()
-  const isWorkActive = pathname === '/' || pathname.startsWith('/competitive-intelligence')
+  const isWorkActive =
+    pathname === '/' ||
+    pathname.startsWith('/competitive-intelligence') ||
+    pathname.startsWith('/ai-analyst-workflows')
 
   return (
     <header className="nav-header">

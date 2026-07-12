@@ -22,7 +22,7 @@ export function ProjectGrid() {
             />
           </div>
         </ProjectCard>
-        <ProjectCard href="#" variant="benchmark">
+        <ProjectCard href="/ai-analyst-workflows" variant="benchmark">
           <div className="project-card-benchmark">
             <BenchmarkPanel />
           </div>
