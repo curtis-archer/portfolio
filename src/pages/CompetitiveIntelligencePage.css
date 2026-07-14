@@ -150,6 +150,13 @@
   aspect-ratio: 1344 / 1135;
 }
 
+.case-study-media--focus.case-study-media--natural {
+  /* Workflow-Full.png is 2689×2242 — match so cover doesn't crop */
+  aspect-ratio: 2689 / 2242;
+  /* size containment collapses height when aspect-ratio/content can't resolve */
+  container-type: normal;
+}
+
 .case-study-media--bento,
 .case-study-media--tile {
   aspect-ratio: 662 / 680;
@@ -167,6 +174,15 @@
   user-select: none;
 }
 
+.case-study-media--bento > .case-study-media-image--fill,
+.case-study-media--tile > .case-study-media-image--fill {
+  width: 100%;
+  max-width: none;
+  max-height: none;
+  height: 100%;
+}
+
+
 .case-study-media--bento .case-study-media-frame {
   position: absolute;
   top: 7.794%;
@@ -183,6 +199,52 @@
   max-width: none;
 }
 
+.case-study-media--bento.case-study-media--inset .case-study-media-frame {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 89.43%;
+  height: 100%;
+  overflow: hidden;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  background: transparent;
+}
+
+.case-study-media--bento.case-study-media--inset .case-study-media-image {
+  width: 100%;
+  height: auto;
+  max-width: none;
+  max-height: none;
+}
+
+.case-study-media--bento.case-study-media--followup > .case-study-media-image--fill {
+  inset: auto;
+  top: auto;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: auto;
+  max-width: none;
+  max-height: none;
+  object-fit: unset;
+  object-position: top center;
+}
+
+/* Figma 44:120937 — full app at (-440.84, 55) / 1300.33×1044 inside 662×680 */
+.case-study-media--tile.case-study-media--artifacts .case-study-media-image--artifacts {
+  position: absolute;
+  left: -66.5915%;
+  top: 8.0882%;
+  display: block;
+  width: 196.4241%;
+  max-width: none;
+  max-height: none;
+  height: auto;
+}
+
 .case-study-media--tile .case-study-media-frame {
   top: 50%;
   left: 50%;
@@ -196,6 +258,13 @@
   height: auto;
   max-width: calc(100cqw - 3.02cqw);
   max-height: calc(100cqh - 2.94cqh);
+}
+
+.case-study-media--tile.case-study-media--chat .case-study-media-image {
+  width: 90.8cqw;
+  height: auto;
+  max-width: 90.8cqw;
+  max-height: none;
 }
 
 .case-study-media-frame {
@@ -243,6 +312,10 @@
 
   .case-study-media--focus {
     aspect-ratio: 16 / 10;
+  }
+
+  .case-study-media--focus.case-study-media--natural {
+    aspect-ratio: 2689 / 2242;
   }
 
   .case-study-media--bento,

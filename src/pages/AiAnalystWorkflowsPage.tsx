@@ -85,75 +85,50 @@ export function AiAnalystWorkflowsPage() {
         <section className="case-study-gallery" aria-label="Project visuals">
           <div className="case-study-gallery-inner">
             <div className="case-study-gallery-row case-study-gallery-row--focus">
-              <div className="case-study-media case-study-media--focus">
+              <div className="case-study-media case-study-media--focus case-study-media--natural">
                 <img
-                  src="/assets/competitive-intelligence/CI-Full.png"
-                  alt="AI Analyst Workflows overview"
+                  src="/assets/competitive-intelligence/ai-workflow-reports/Workflow-Full.png"
+                  alt="AI Analyst Workflows full report view"
                   className="case-study-media-image case-study-media-image--fill"
                 />
               </div>
             </div>
 
             <div className="case-study-gallery-row case-study-gallery-row--pair">
-              <div className="case-study-media case-study-media--bento">
+              <div className="case-study-media case-study-media--bento case-study-media--inset">
                 <div className="case-study-media-frame">
                   <img
-                    src="/assets/competitive-intelligence/ScatterPlot1.png"
-                    alt="Workflow visualization detail"
+                    src="/assets/competitive-intelligence/ai-workflow-reports/Pricing.png"
+                    alt="Pricing and price band analysis within a workflow report"
                     className="case-study-media-image"
                   />
                 </div>
               </div>
-              <div className="case-study-media case-study-media--bento">
-                <div className="case-study-media-frame">
-                  <img
-                    src="/assets/competitive-intelligence/ScatterPlot2.png"
-                    alt="Workflow visualization with actions"
-                    className="case-study-media-image"
-                  />
-                </div>
+              <div className="case-study-media case-study-media--bento case-study-media--followup">
+                <img
+                  src="/assets/competitive-intelligence/ai-workflow-reports/Followup.png"
+                  alt="Follow-up actions after completing a workflow report"
+                  className="case-study-media-image case-study-media-image--fill"
+                />
               </div>
             </div>
 
             <div className="case-study-gallery-row case-study-gallery-row--pair">
-              <div className="case-study-media case-study-media--tile">
+              <div className="case-study-media case-study-media--tile case-study-media--chat">
                 <div className="case-study-media-frame">
                   <img
-                    src="/assets/competitive-intelligence/ProductDetails.png"
-                    alt="Analysis detail view"
+                    src="/assets/competitive-intelligence/ai-workflow-reports/Chat.png"
+                    alt="AI Analyst empty chat with suggested workflows"
                     className="case-study-media-image"
                   />
                 </div>
               </div>
-              <div className="case-study-media case-study-media--tile">
-                <div className="case-study-media-frame">
-                  <img
-                    src="/assets/competitive-intelligence/AddProducts.png"
-                    alt="Workflow input and selection"
-                    className="case-study-media-image"
-                  />
-                </div>
-              </div>
-            </div>
-
-            <div className="case-study-gallery-row case-study-gallery-row--pair">
-              <div className="case-study-media case-study-media--tile">
-                <div className="case-study-media-frame">
-                  <img
-                    src="/assets/competitive-intelligence/EmptyState.png"
-                    alt="Empty state for starting a workflow"
-                    className="case-study-media-image"
-                  />
-                </div>
-              </div>
-              <div className="case-study-media case-study-media--tile">
-                <div className="case-study-media-frame">
-                  <img
-                    src="/assets/competitive-intelligence/Create.png"
-                    alt="Create workflow modal"
-                    className="case-study-media-image"
-                  />
-                </div>
+              <div className="case-study-media case-study-media--tile case-study-media--artifacts">
+                <img
+                  src="/assets/competitive-intelligence/ai-workflow-reports/Artifacts.png"
+                  alt="AI Analyst Artifacts library of saved reports"
+                  className="case-study-media-image case-study-media-image--artifacts"
+                />
               </div>
             </div>
           </div>
