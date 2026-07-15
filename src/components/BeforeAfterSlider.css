@@ -1,0 +1,125 @@
+.before-after {
+  --before-after-pos: 50%;
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  touch-action: none;
+  user-select: none;
+  cursor: ew-resize;
+  background: var(--color-card-bg);
+}
+
+.before-after-image {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  pointer-events: none;
+  user-select: none;
+}
+
+.before-after-before {
+  position: absolute;
+  inset: 0;
+  clip-path: inset(0 calc(100% - var(--before-after-pos)) 0 0);
+}
+
+.before-after-label {
+  position: absolute;
+  top: 16px;
+  z-index: 2;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: rgba(44, 44, 44, 0.72);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.before-after-label--before {
+  left: 16px;
+}
+
+.before-after-label--after {
+  right: 16px;
+}
+
+.before-after-divider {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: var(--before-after-pos);
+  z-index: 3;
+  width: 2px;
+  transform: translateX(-50%);
+  background: #fff;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.08);
+  pointer-events: none;
+}
+
+.before-after-knob {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #fff;
+  color: var(--color-text);
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.08),
+    0 8px 20px rgba(0, 0, 0, 0.14);
+  transform: translate(-50%, -50%);
+}
+
+.before-after-knob-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.before-after-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.before-after:focus-visible {
+  outline: 2px solid var(--color-text);
+  outline-offset: -2px;
+}
+
+@media (max-width: 768px) {
+  .before-after-label {
+    top: 12px;
+    padding: 5px 8px;
+    font-size: 11px;
+  }
+
+  .before-after-label--before {
+    left: 12px;
+  }
+
+  .before-after-label--after {
+    right: 12px;
+  }
+
+  .before-after-knob {
+    width: 40px;
+    height: 40px;
+  }
+}

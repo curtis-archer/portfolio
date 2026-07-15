@@ -116,6 +116,42 @@
   pointer-events: none;
 }
 
+/* Crop matches Figma Component 153: checkout UI at (-309, -62) / 690×499 in a 434.67×330 card */
+.project-card-checkout {
+  --checkout-lift: 0px;
+  position: absolute;
+  top: calc(-62 / 330 * 100%);
+  left: calc(-309 / 434.67 * 100%);
+  z-index: 0;
+  width: calc(690 / 434.67 * 100%);
+  pointer-events: none;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  transform: translateY(var(--checkout-lift));
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-card-checkout img {
+  display: block;
+  width: 100%;
+  max-width: none;
+  height: auto;
+  box-shadow: 0 2px 1.5px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-card-wrap:hover .project-card-checkout,
+.project-card-wrap:focus-within .project-card-checkout {
+  --checkout-lift: -10px;
+}
+
+.project-card-wrap:hover .project-card-checkout img,
+.project-card-wrap:focus-within .project-card-checkout img {
+  box-shadow:
+    0 24px 48px rgba(255, 100, 50, 0.12),
+    0 12px 24px rgba(255, 130, 80, 0.08);
+  transition-delay: 0.05s;
+}
+
 @container (max-width: 560px) {
   .project-card-benchmark {
     top: 24px;

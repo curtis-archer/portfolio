@@ -44,7 +44,14 @@ export function ProjectGrid() {
       </div>
 
       <div className="project-grid-row project-grid-row--split">
-        <ProjectCard href="#" />
+        <ProjectCard href="/checkout-redesign">
+          <div className="project-card-checkout">
+            <img
+              src="/assets/checkout/LandingCheckout.png"
+              alt="Checkout redesign subscription summary"
+            />
+          </div>
+        </ProjectCard>
         <ProjectCard href="#" />
       </div>
     </section>

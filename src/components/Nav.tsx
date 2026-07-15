@@ -6,7 +6,8 @@ export function Nav() {
   const isWorkActive =
     pathname === '/' ||
     pathname.startsWith('/competitive-intelligence') ||
-    pathname.startsWith('/ai-analyst-workflows')
+    pathname.startsWith('/ai-analyst-workflows') ||
+    pathname.startsWith('/checkout-redesign')
 
   return (
     <header className="nav-header">
