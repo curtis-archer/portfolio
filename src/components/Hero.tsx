@@ -3,32 +3,30 @@ import './Hero.css'
 export function Hero() {
   return (
     <section className="hero">
-      <div className="hero-content">
-        <h1 className="hero-title">
-          Product Design <span className="hero-title-muted">Leader</span>
-        </h1>
-        <div className="hero-intro">
-          <p>
-            Hi, I&apos;m <em className="hero-name">Curtis Archer</em>.
-          </p>
-          <p>
-            I&apos;m a product designer who&apos;s been crafting experiences for
-            over 10 years.
-          </p>
-        </div>
-      </div>
+      <h1 className="hero-title">
+        <span className="hero-title-primary">Hello, I&apos;m Curtis.</span>
+        <span className="hero-title-secondary">
+          I&apos;m a <em>product designer</em> with over 10 years experience.
+        </span>
+      </h1>
       <div className="hero-actions">
-        <a href="mailto:hello@curtisarcher.com" className="btn btn--primary">
-          EMAIL ME
+        <a href="mailto:hello@curtisarcher.com" className="hero-btn hero-btn--primary">
+          Let&apos;s chat
         </a>
         <a
           href="https://www.linkedin.com/in/curtis-archer-8b74004"
-          className="btn btn--secondary"
+          className="hero-btn hero-btn--secondary"
           target="_blank"
           rel="noopener noreferrer"
         >
-          LET&apos;S CONNECT
-          <img src="/assets/linkedin.svg" alt="" width={24} height={24} />
+          Or let&apos;s connect online
+          <img
+            src="/assets/linkedin-icon.svg"
+            alt=""
+            width={20}
+            height={20}
+            className="hero-btn-icon"
+          />
         </a>
       </div>
     </section>

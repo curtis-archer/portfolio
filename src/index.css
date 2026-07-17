@@ -14,6 +14,7 @@
   --color-nav-active: rgba(0, 0, 0, 0.08);
   --color-button-border: #e3e3e3;
   --font-sans: 'Inter', system-ui, sans-serif;
+  --font-serif: 'Libre Caslon Text', 'Times New Roman', serif;
 }
 
 html {
