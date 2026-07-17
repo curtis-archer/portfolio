@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { ScrollToTop } from './components/ScrollToTop'
 import { AiAnalystWorkflowsPage } from './pages/AiAnalystWorkflowsPage'
 import { CheckoutRedesignPage } from './pages/CheckoutRedesignPage'
 import { CompetitiveIntelligencePage } from './pages/CompetitiveIntelligencePage'
@@ -7,6 +8,7 @@ import { HomePage } from './pages/HomePage'
 function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route
