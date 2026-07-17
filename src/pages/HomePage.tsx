@@ -10,8 +10,8 @@ export function HomePage() {
       <Nav />
       <div className="page-body">
         <Hero />
-        <ProjectGrid />
         <AboutGrid />
+        <ProjectGrid />
       </div>
     </div>
   )

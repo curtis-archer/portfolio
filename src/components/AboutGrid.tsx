@@ -9,9 +9,16 @@ export function AboutGrid() {
     <section id="about" className="about-grid" aria-label="About">
       <ProjectCard
         className="about-grid-cell about-grid-cell--intro"
-        asStatic
+        href="/ai-analyst-workflows"
         hideArrow
-      />
+      >
+        <div className="about-card-media about-card-media--report">
+          <img
+            src="/assets/Home/instant-ai-reports.png"
+            alt="Instant AI benchmarking report for BIC ballpoint pens"
+          />
+        </div>
+      </ProjectCard>
 
       <ProjectCard
         className="about-grid-cell about-grid-cell--market"
@@ -31,7 +38,14 @@ export function AboutGrid() {
         className="about-grid-cell about-grid-cell--tall"
         asStatic
         hideArrow
-      />
+      >
+        <div className="about-card-media about-card-media--chat">
+          <img
+            src="/assets/Home/chat.png"
+            alt="Ask Cobalt chat interface"
+          />
+        </div>
+      </ProjectCard>
 
       <ProjectCard
         className="about-grid-cell about-grid-cell--photos"
@@ -39,6 +53,13 @@ export function AboutGrid() {
         hideArrow
       >
         <div className="about-card-photos">
+          <img
+            className="project-card-logo-mark"
+            src="/assets/logo-large.svg"
+            alt=""
+            width={65}
+            height={42}
+          />
           <PhotoStack />
         </div>
       </ProjectCard>
@@ -67,16 +88,17 @@ export function AboutGrid() {
       </ProjectCard>
 
       <ProjectCard
-        className="about-grid-cell about-grid-cell--empty-a"
+        className="about-grid-cell about-grid-cell--design"
         asStatic
         hideArrow
-      />
-
-      <ProjectCard
-        className="about-grid-cell about-grid-cell--empty-b"
-        asStatic
-        hideArrow
-      />
+      >
+        <div className="about-card-media about-card-media--design">
+          <img
+            src="/assets/Home/design-system.png"
+            alt="Jungle Scout design system color foundations"
+          />
+        </div>
+      </ProjectCard>
     </section>
   )
 }
