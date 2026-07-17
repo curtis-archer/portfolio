@@ -17,6 +17,9 @@ type ProjectCardProps = {
   title?: string
   description?: string
   variant?: 'default' | 'benchmark'
+  className?: string
+  asStatic?: boolean
+  hideArrow?: boolean
   children?: ReactNode
 }
 
@@ -29,12 +32,16 @@ export function ProjectCard({
   title,
   description,
   variant = 'default',
+  className = '',
+  asStatic = false,
+  hideArrow = false,
   children,
 }: ProjectCardProps) {
   const wrapClass = [
     'project-card-wrap',
     variant === 'benchmark' && 'project-card-wrap--benchmark',
     showLogo && 'project-card-wrap--logo',
+    className,
   ]
     .filter(Boolean)
     .join(' ')
@@ -75,15 +82,19 @@ export function ProjectCard({
         </div>
       )}
 
-      <span className="project-card-arrow" aria-hidden="true">
-        <img src="/assets/arrow-link.svg" alt="" width={32} height={32} />
-      </span>
+      {!hideArrow && (
+        <span className="project-card-arrow" aria-hidden="true">
+          <img src="/assets/arrow-link.svg" alt="" width={32} height={32} />
+        </span>
+      )}
     </>
   )
 
   return (
     <div className={wrapClass}>
-      {isInternalLink ? (
+      {asStatic ? (
+        <div className="project-card">{cardContent}</div>
+      ) : isInternalLink ? (
         <Link to={href} className="project-card">
           {cardContent}
         </Link>
@@ -93,12 +104,12 @@ export function ProjectCard({
         </a>
       )}
 
-    {title && description && (
-      <p className="project-card-caption">
-        <strong>{title}</strong>
-        <span>{description}</span>
-      </p>
-    )}
+      {title && description && (
+        <p className="project-card-caption">
+          <strong>{title}</strong>
+          <span>{description}</span>
+        </p>
+      )}
     </div>
   )
 }

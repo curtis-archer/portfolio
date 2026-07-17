@@ -1,3 +1,4 @@
+import { AboutGrid } from '../components/AboutGrid'
 import { Hero } from '../components/Hero'
 import { Nav } from '../components/Nav'
 import { ProjectGrid } from '../components/ProjectGrid'
@@ -10,6 +11,7 @@ export function HomePage() {
       <div className="page-body">
         <Hero />
         <ProjectGrid />
+        <AboutGrid />
       </div>
     </div>
   )
