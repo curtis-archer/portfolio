@@ -10,6 +10,7 @@ export function AboutGrid() {
       <ProjectCard
         className="about-grid-cell about-grid-cell--intro"
         href="/ai-analyst-workflows"
+        variant="benchmark"
         hideArrow
       >
         <div className="about-card-media about-card-media--report">
@@ -36,6 +37,7 @@ export function AboutGrid() {
 
       <ProjectCard
         className="about-grid-cell about-grid-cell--tall"
+        variant="benchmark"
         asStatic
         hideArrow
       >

@@ -189,8 +189,8 @@
 .about-grid-cell--intro:focus-within .about-card-media--report {
   --media-lift: -10px;
   box-shadow:
-    0 24px 48px rgba(255, 100, 50, 0.12),
-    0 12px 24px rgba(255, 130, 80, 0.08);
+    0 24px 48px rgba(83, 87, 248, 0.12),
+    0 12px 24px rgba(120, 124, 255, 0.07);
 }
 
 /* Crop matches Figma: checkout UI at (-187, 42) / 804×576 in a square card */
@@ -229,8 +229,8 @@
 .about-grid-cell--tall:focus-within .about-card-media--chat {
   --media-lift: -10px;
   box-shadow:
-    0 24px 48px rgba(255, 100, 50, 0.12),
-    0 12px 24px rgba(255, 130, 80, 0.08);
+    0 24px 48px rgba(83, 87, 248, 0.12),
+    0 12px 24px rgba(120, 124, 255, 0.07);
 }
 
 .about-grid-cell--design:hover .about-card-media--design,
