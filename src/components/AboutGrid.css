@@ -82,11 +82,15 @@
 .about-card-dashboard .metric-card {
   width: 580px;
   height: 297px;
-  transition: box-shadow 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateY(0);
+  transition:
+    transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .about-grid-cell--market:hover .about-card-dashboard .metric-card,
 .about-grid-cell--market:focus-within .about-card-dashboard .metric-card {
+  transform: translateY(-10px);
   box-shadow:
     0 24px 48px rgba(255, 100, 50, 0.12),
     0 12px 24px rgba(255, 130, 80, 0.08);
@@ -163,14 +167,15 @@
   object-position: top center;
 }
 
-/* Figma Component 153: chat UI 580 tall, width from image aspect */
+/* Chat UI: 40px inset from top, bottom, and left */
 .about-card-media--chat {
-  top: calc(40 / 660 * 100%);
-  left: 280px;
-  height: calc(580 / 660 * 100%);
+  top: 40px;
+  bottom: 40px;
+  left: 40px;
+  height: auto;
   width: auto;
   border-radius: 23px;
-  transform: translate(-50%, var(--media-lift));
+  transform: translateY(var(--media-lift));
 }
 
 .about-card-media--chat img {
