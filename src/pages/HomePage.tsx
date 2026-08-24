@@ -1,7 +1,6 @@
 import { AboutGrid } from '../components/AboutGrid'
 import { Hero } from '../components/Hero'
 import { Nav } from '../components/Nav'
-import { ProjectGrid } from '../components/ProjectGrid'
 import '../App.css'
 
 export function HomePage() {
@@ -11,7 +10,6 @@ export function HomePage() {
       <div className="page-body">
         <Hero />
         <AboutGrid />
-        <ProjectGrid />
       </div>
     </div>
   )
