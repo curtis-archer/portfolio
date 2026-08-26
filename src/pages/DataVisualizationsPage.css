@@ -1,0 +1,140 @@
+.case-study-story {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: min(800px, 100%);
+  padding: 60px 24px 80px;
+}
+
+.case-study-gallery--lead {
+  padding-bottom: 0;
+}
+
+.case-study-story-block {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.case-study-story-title {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: normal;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.case-study-story-media {
+  overflow: hidden;
+  width: 100%;
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 30px;
+}
+
+.case-study-story-media--first {
+  aspect-ratio: 1600 / 600;
+}
+
+.case-study-story-media--testing {
+  aspect-ratio: 1600 / 924;
+}
+
+.case-study-story-media--more {
+  aspect-ratio: 1600 / 1138;
+}
+
+.case-study-story-media--hover {
+  aspect-ratio: 1600 / 592;
+}
+
+.case-study-story-media--final {
+  aspect-ratio: 1600 / 1349;
+}
+
+.case-study-story-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  pointer-events: none;
+  user-select: none;
+}
+
+.case-study-story-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.case-study-insights {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+  padding: 12px 0;
+}
+
+.case-study-insight {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+  padding: 20px;
+  border: 1px solid #dcdcdc;
+  border-radius: 20px;
+}
+
+.case-study-insight-dots,
+.case-study-insight-hearts {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 8px 0;
+}
+
+.case-study-insight-dot {
+  flex-shrink: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 30px;
+  background: #d9d9d9;
+}
+
+.case-study-insight-dot--alert {
+  background: #ff5050;
+}
+
+.case-study-insight-heart {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  width: 12px;
+  height: 13px;
+  overflow: clip;
+}
+
+.case-study-insight-heart img {
+  display: block;
+  width: 12px;
+  height: 13px;
+}
+
+.case-study-insight .case-study-text strong {
+  font-weight: 700;
+}
+
+@media (max-width: 700px) {
+  .case-study-insights {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 640px) {
+  .case-study-story {
+    padding: 40px 16px 48px;
+  }
+}

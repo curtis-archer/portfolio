@@ -31,7 +31,7 @@ export function ProjectGrid() {
 
       <div className="project-grid-row project-grid-row--quad">
         <ProjectCard
-          href="#"
+          href="/data-visualizations"
           tags={[{ icon: '/assets/book.svg', label: 'Show Case' }]}
         >
           <div className="project-card-showcase">

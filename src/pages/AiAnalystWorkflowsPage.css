@@ -1,0 +1,71 @@
+.case-study-status {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  max-width: 100%;
+  padding: 6px;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 40px;
+}
+
+.case-study-status-pill,
+.case-study-status-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 13px 20px;
+  border-radius: 40px;
+  font-size: 17px;
+  font-weight: 500;
+  letter-spacing: -0.34px;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.case-study-status-pill {
+  background: rgba(44, 44, 44, 0.4);
+  color: #fff;
+}
+
+.case-study-status-note {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.case-study-media--focus.case-study-media--ask-hero {
+  aspect-ratio: 2688 / 1782;
+  border-radius: 20px;
+  box-shadow:
+    0 1.104px 2.209px 0 rgba(0, 0, 0, 0.09),
+    0 -3.313px 16.566px 0 rgba(0, 0, 0, 0.1);
+  container-type: normal;
+}
+
+.case-study-media--focus.case-study-media--ask-full {
+  aspect-ratio: 1344 / 680;
+  container-type: normal;
+}
+
+@media (max-width: 900px) {
+  .case-study-media--focus.case-study-media--ask-hero {
+    aspect-ratio: 2688 / 1782;
+  }
+
+  .case-study-media--focus.case-study-media--ask-full {
+    aspect-ratio: 1344 / 680;
+  }
+}
+
+@media (max-width: 700px) {
+  .case-study-status {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  .case-study-status-pill,
+  .case-study-status-note {
+    white-space: normal;
+    text-align: center;
+  }
+}

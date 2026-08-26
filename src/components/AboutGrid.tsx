@@ -68,7 +68,7 @@ export function AboutGrid() {
 
       <ProjectCard
         className="about-grid-cell about-grid-cell--showcase"
-        asStatic
+        href="/data-visualizations"
         hideArrow
       >
         <div className="about-card-showcase">

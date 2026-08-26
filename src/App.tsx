@@ -3,6 +3,7 @@ import { ScrollToTop } from './components/ScrollToTop'
 import { AiAnalystWorkflowsPage } from './pages/AiAnalystWorkflowsPage'
 import { CheckoutRedesignPage } from './pages/CheckoutRedesignPage'
 import { CompetitiveIntelligencePage } from './pages/CompetitiveIntelligencePage'
+import { DataVisualizationsPage } from './pages/DataVisualizationsPage'
 import { HomePage } from './pages/HomePage'
 
 function App() {
@@ -22,6 +23,10 @@ function App() {
         <Route
           path="/checkout-redesign"
           element={<CheckoutRedesignPage />}
+        />
+        <Route
+          path="/data-visualizations"
+          element={<DataVisualizationsPage />}
         />
       </Routes>
     </BrowserRouter>

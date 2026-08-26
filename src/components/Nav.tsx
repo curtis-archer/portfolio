@@ -7,7 +7,8 @@ export function Nav() {
     pathname === '/' ||
     pathname.startsWith('/competitive-intelligence') ||
     pathname.startsWith('/ai-analyst-workflows') ||
-    pathname.startsWith('/checkout-redesign')
+    pathname.startsWith('/checkout-redesign') ||
+    pathname.startsWith('/data-visualizations')
 
   return (
     <header className="nav-header">

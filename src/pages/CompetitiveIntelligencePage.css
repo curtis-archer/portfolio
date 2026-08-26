@@ -163,6 +163,12 @@
   container-type: normal;
 }
 
+.case-study-media--focus.case-study-media--datavis {
+  /* Figma Component 158 hero: 1344×680 */
+  aspect-ratio: 1344 / 680;
+  container-type: normal;
+}
+
 .case-study-media--bento,
 .case-study-media--tile {
   aspect-ratio: 662 / 680;
@@ -277,6 +283,24 @@
   max-height: none;
 }
 
+.case-study-media--tile.case-study-media--figure .case-study-media-frame {
+  width: 89.43%;
+  height: fit-content;
+  max-height: calc(100cqh - 2.94cqh);
+  background: transparent;
+  border: none;
+  border-radius: 12px;
+  box-shadow: none;
+}
+
+.case-study-media--tile.case-study-media--figure .case-study-media-image {
+  width: 100%;
+  height: auto;
+  max-width: none;
+  max-height: calc(100cqh - 2.94cqh);
+  object-fit: contain;
+}
+
 .case-study-media-frame {
   position: absolute;
   top: 8.09%;
@@ -330,6 +354,10 @@
 
   .case-study-media--focus.case-study-media--checkout {
     aspect-ratio: 2688 / 2136;
+  }
+
+  .case-study-media--focus.case-study-media--datavis {
+    aspect-ratio: 1344 / 680;
   }
 
   .case-study-media--bento,
