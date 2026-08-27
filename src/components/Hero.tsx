@@ -10,7 +10,7 @@ export function Hero() {
         </span>
       </h1>
       <div className="hero-actions">
-        <a href="mailto:hello@curtisarcher.com" className="hero-btn hero-btn--primary">
+        <a href="mailto:archer.curtis@gmail.com" className="hero-btn hero-btn--primary">
           Let&apos;s chat
         </a>
         <a
