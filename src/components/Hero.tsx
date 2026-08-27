@@ -14,7 +14,7 @@ export function Hero() {
           Let&apos;s chat
         </a>
         <a
-          href="https://www.linkedin.com/in/curtis-archer-8b74004"
+          href="https://www.linkedin.com/in/curtis-archer/"
           className="hero-connect"
           target="_blank"
           rel="noopener noreferrer"
