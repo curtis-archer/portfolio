@@ -6,7 +6,7 @@ import './AboutGrid.css'
 
 export function AboutGrid() {
   return (
-    <section id="about" className="about-grid" aria-label="About">
+    <section id="work" className="about-grid" aria-label="Work">
       <ProjectCard
         className="about-grid-cell about-grid-cell--intro"
         href="/ai-analyst-workflows"

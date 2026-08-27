@@ -1,0 +1,250 @@
+.about-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.about-section {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 80px 0;
+}
+
+.about-section--bio {
+  border-bottom: 2px dashed rgba(0, 0, 0, 0.4);
+}
+
+.about-layout {
+  display: grid;
+  grid-template-columns: 150px minmax(220px, 412px) minmax(0, 1fr);
+  gap: 70px;
+  align-items: start;
+  width: min(1340px, 100%);
+}
+
+.about-heading {
+  margin: 0;
+  width: 150px;
+  font-family: var(--font-serif);
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.03em;
+  color: var(--color-text);
+}
+
+.about-photo {
+  width: 100%;
+  max-width: 412px;
+  aspect-ratio: 412 / 308;
+  overflow: hidden;
+  border: 10px solid #f5f5f5;
+  border-radius: 8px;
+  box-shadow:
+    0 1px 4px rgba(0, 0, 0, 0.2),
+    0 5.4px 3.6px rgba(0, 0, 0, 0.05);
+}
+
+.about-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+}
+
+.about-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 34px;
+  min-width: 0;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 2;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.about-copy p {
+  margin: 0;
+}
+
+.about-copy strong {
+  font-weight: 700;
+}
+
+.about-resume-wrap {
+  width: 100%;
+  max-width: 412px;
+}
+
+.about-resume {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 13px 20px;
+  border: 1px solid var(--color-text);
+  border-radius: 40px;
+  background: #ffffff;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--color-text);
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.about-resume:hover {
+  background: var(--color-text);
+  color: #ffffff;
+}
+
+.about-jobs {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  min-width: 0;
+}
+
+.about-job {
+  display: flex;
+  gap: 80px;
+  align-items: flex-start;
+  width: 100%;
+  padding: 8px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background: var(--color-card-bg);
+  text-align: left;
+  color: inherit;
+}
+
+.about-job-dates {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px 10px;
+  border: 1px solid var(--color-border);
+  border-radius: 40px;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 2;
+  color: var(--color-text-muted);
+  white-space: nowrap;
+}
+
+.about-job-body {
+  display: flex;
+  flex: 1;
+  align-items: flex-start;
+  min-width: 0;
+}
+
+.about-job-copy {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.about-job-title {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.6;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.about-job-company {
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: rgba(0, 0, 0, 0.55);
+}
+
+.about-job-description {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 2;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.about-job-icon {
+  position: relative;
+  flex-shrink: 0;
+  width: 15px;
+  height: 19px;
+  margin-left: 8px;
+}
+
+.about-job-icon::before,
+.about-job-icon::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: rgba(0, 0, 0, 0.75);
+  border-radius: 1px;
+  transform: translate(-50%, -50%);
+  transition: transform 0.2s ease;
+}
+
+.about-job-icon::before {
+  width: 11px;
+  height: 1.5px;
+}
+
+.about-job-icon::after {
+  width: 1.5px;
+  height: 11px;
+}
+
+.about-job-icon--open::after {
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+@media (max-width: 1024px) {
+  .about-layout {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .about-heading {
+    width: auto;
+  }
+
+  .about-photo,
+  .about-resume-wrap {
+    max-width: none;
+  }
+
+  .about-job {
+    gap: 16px;
+  }
+}
+
+@media (max-width: 640px) {
+  .about-section {
+    padding: 48px 0;
+  }
+
+  .about-copy {
+    gap: 24px;
+    font-size: 16px;
+  }
+
+  .about-job {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .about-job-icon {
+    margin-top: 2px;
+  }
+}

@@ -3,12 +3,14 @@ import './Nav.css'
 
 export function Nav() {
   const { pathname } = useLocation()
+  const isAboutActive = pathname === '/about'
   const isWorkActive =
-    pathname === '/' ||
-    pathname.startsWith('/competitive-intelligence') ||
-    pathname.startsWith('/ai-analyst-workflows') ||
-    pathname.startsWith('/checkout-redesign') ||
-    pathname.startsWith('/data-visualizations')
+    !isAboutActive &&
+    (pathname === '/' ||
+      pathname.startsWith('/competitive-intelligence') ||
+      pathname.startsWith('/ai-analyst-workflows') ||
+      pathname.startsWith('/checkout-redesign') ||
+      pathname.startsWith('/data-visualizations'))
 
   return (
     <header className="nav-header">
@@ -23,9 +25,13 @@ export function Nav() {
         >
           Work
         </Link>
-        <a href="/#about" className="nav-link">
+        <Link
+          to="/about"
+          className={`nav-link${isAboutActive ? ' nav-link--active' : ''}`}
+          aria-current={isAboutActive ? 'page' : undefined}
+        >
           About
-        </a>
+        </Link>
       </nav>
     </header>
   )
