@@ -1,25 +1,26 @@
 .nav-header {
   position: sticky;
-  top: 0;
+  top: 18px;
   z-index: 10;
-  display: flex;
-  justify-content: center;
-  padding: 18px 26px;
-}
-
-.nav {
   display: flex;
   align-items: center;
   width: 245px;
+  margin-top: 18px;
   padding: 4px;
   background: rgba(255, 255, 255, 0.43);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  backdrop-filter: blur(20px) saturate(180%);
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 40px;
   box-shadow:
     0 0 1px rgba(0, 0, 0, 0.1),
     0 4px 7px rgba(0, 0, 0, 0.05);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  width: 100%;
 }
 
 .nav-logo {
@@ -48,7 +49,6 @@
 
 .nav-link--active {
   background: var(--color-nav-active);
-  backdrop-filter: blur(2px);
   color: #000000;
 }
 
