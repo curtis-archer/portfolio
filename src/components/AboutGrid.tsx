@@ -15,8 +15,8 @@ export function AboutGrid() {
       >
         <div className="about-card-media about-card-media--report">
           <img
-            src="/assets/Home/instant-ai-reports.png"
-            alt="Instant AI benchmarking report for BIC ballpoint pens"
+            src="/assets/Home/Ask-Cobalt-Hero-Home.png"
+            alt="Ask Cobalt benchmarking report workflow"
           />
         </div>
       </ProjectCard>
@@ -36,16 +36,12 @@ export function AboutGrid() {
       </ProjectCard>
 
       <ProjectCard
-        className="about-grid-cell about-grid-cell--tall"
-        variant="benchmark"
-        asStatic
+        className="about-grid-cell about-grid-cell--showcase"
+        href="/data-visualizations"
         hideArrow
       >
-        <div className="about-card-media about-card-media--chat">
-          <img
-            src="/assets/Home/chat.png"
-            alt="Ask Cobalt chat interface"
-          />
+        <div className="about-card-showcase">
+          <ShowcaseStack layout="tall" />
         </div>
       </ProjectCard>
 
@@ -63,16 +59,6 @@ export function AboutGrid() {
             height={42}
           />
           <PhotoStack />
-        </div>
-      </ProjectCard>
-
-      <ProjectCard
-        className="about-grid-cell about-grid-cell--showcase"
-        href="/data-visualizations"
-        hideArrow
-      >
-        <div className="about-card-showcase">
-          <ShowcaseStack />
         </div>
       </ProjectCard>
 

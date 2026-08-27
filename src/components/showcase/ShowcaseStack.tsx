@@ -3,6 +3,13 @@ import './ShowcaseStack.css'
 
 const CARDS = [
   {
+    title: 'STAR RATING',
+    value: '3.78',
+    labels: ['3.21', '4.0', '4.8'] as [string, string, string],
+    className: 'showcase-stack-card--rating-back',
+    aboutOnly: true,
+  },
+  {
     title: 'UNITS SOLD',
     value: '5,100',
     labels: ['1K', '10K', '20M'] as [string, string, string],
@@ -28,11 +35,11 @@ const CARDS = [
   },
 ] as const
 
-export function ShowcaseStack() {
+export function ShowcaseStack({ layout = 'default' }: { layout?: 'default' | 'tall' }) {
   return (
     <div className="showcase-stack" aria-hidden="true">
-      {CARDS.map((card) => (
-        <div key={card.title} className={`showcase-stack-card ${card.className}`}>
+      {CARDS.filter((card) => layout === 'tall' || !('aboutOnly' in card)).map((card) => (
+        <div key={card.className} className={`showcase-stack-card ${card.className}`}>
           <ScatterMetricCard
             title={card.title}
             value={card.value}

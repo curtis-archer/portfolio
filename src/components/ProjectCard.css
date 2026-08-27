@@ -27,10 +27,7 @@
 .project-card-wrap--benchmark:focus-within .project-card,
 .about-grid-cell--intro:hover .project-card,
 .about-grid-cell--intro:focus-within .project-card,
-.about-grid-cell--intro .project-card:hover,
-.about-grid-cell--tall:hover .project-card,
-.about-grid-cell--tall:focus-within .project-card,
-.about-grid-cell--tall .project-card:hover {
+.about-grid-cell--intro .project-card:hover {
   background: #f5f6ff;
   border-color: #5357f8;
 }

@@ -31,21 +31,15 @@
 }
 
 /* Row 2–3, Col 3 */
-.about-grid-cell--tall {
+.about-grid-cell--showcase {
   grid-column: 3;
   grid-row: 2 / 4;
 }
 
-/* Row 2, Col 4 */
+/* Row 2–3, Col 4 */
 .about-grid-cell--photos {
   grid-column: 4;
-  grid-row: 2;
-}
-
-/* Row 3, Col 4 */
-.about-grid-cell--showcase {
-  grid-column: 4;
-  grid-row: 3;
+  grid-row: 2 / 4;
 }
 
 /* Row 3–4, Col 1–2 */
@@ -120,14 +114,132 @@
 }
 
 .about-card-showcase {
-  --showcase-scale: 0.8;
   position: absolute;
-  top: 45%;
-  left: 50%;
+  inset: 0;
   z-index: 0;
-  transform: translate(-50%, -50%) scale(var(--showcase-scale));
-  transform-origin: center center;
   pointer-events: none;
+}
+
+.about-grid-cell--showcase .showcase-stack {
+  position: absolute;
+  inset: 0;
+  width: auto;
+  height: auto;
+}
+
+.about-grid-cell--showcase .showcase-stack-card {
+  width: calc(216.289 / 320 * 100%);
+  left: 50%;
+  top: auto;
+}
+
+.about-grid-cell--showcase .scatter-metric-card {
+  gap: 13px;
+  padding: 17px;
+  border-radius: 12px;
+}
+
+.about-grid-cell--showcase .scatter-metric-card-title,
+.about-grid-cell--showcase .scatter-metric-card-value {
+  font-size: 15px;
+  line-height: 21.5px;
+}
+
+.about-grid-cell--showcase .scatter-metric-card-label {
+  font-size: 13px;
+}
+
+.about-grid-cell--showcase .showcase-stack-card--rating-back {
+  z-index: 0;
+  top: calc(326 / 660 * 100%);
+  transform: translateX(calc(-50% - 2.08 / 320 * 100cqi)) rotate(-6.52deg);
+}
+
+.about-grid-cell--showcase .showcase-stack-card--units {
+  z-index: 1;
+  top: calc(275 / 660 * 100%);
+  transform: translateX(calc(-50% + 21.14 / 320 * 100cqi)) rotate(5.81deg);
+}
+
+.about-grid-cell--showcase .showcase-stack-card--price {
+  z-index: 2;
+  top: calc(238 / 660 * 100%);
+  transform: translateX(calc(-50% - 32.76 / 320 * 100cqi)) rotate(-5deg);
+}
+
+.about-grid-cell--showcase .showcase-stack-card--rating {
+  z-index: 3;
+  top: calc(206 / 660 * 100%);
+  transform: translateX(calc(-50% + 33.4 / 320 * 100cqi)) rotate(4.27deg);
+}
+
+.about-grid-cell--showcase .showcase-stack-card--reviews {
+  z-index: 4;
+  top: calc(162 / 660 * 100%);
+  width: calc(231.451 / 320 * 100%);
+  transform: translateX(calc(-50% + 1.58 / 320 * 100cqi)) rotate(0deg);
+}
+
+.about-grid-cell--showcase:hover .showcase-stack-card--reviews,
+.about-grid-cell--showcase:focus-within .showcase-stack-card--reviews {
+  transform: translateX(calc(-50% + 1.58 / 320 * 100cqi)) translateY(-10px)
+    rotate(0deg);
+}
+
+.about-grid-cell--photos .photo-stack {
+  --photo-scale: min(1, 100cqw / 320px);
+  --photo-w: calc(273px * var(--photo-scale));
+  --photo-h: calc(359px * var(--photo-scale));
+}
+
+.about-grid-cell--photos .photo-stack-item--3753 {
+  z-index: 1;
+  --ox: -146px;
+  --oy: -127px;
+  --photo-r: 11.34deg;
+  --ox-hover: -346px;
+  --oy-hover: -207px;
+  --photo-r-hover: -17.49deg;
+}
+
+.about-grid-cell--photos .photo-stack-item--3752 {
+  z-index: 2;
+  --ox: 48px;
+  --oy: 0px;
+  --photo-r: -7.68deg;
+  --ox-hover: 249px;
+  --oy-hover: -208px;
+  --photo-r-hover: -32.28deg;
+}
+
+.about-grid-cell--photos .photo-stack-item--4071 {
+  z-index: 3;
+  --ox: -53px;
+  --oy: 216px;
+  --photo-r: 20.73deg;
+  --ox-hover: -163px;
+  --oy-hover: 395px;
+  --photo-r-hover: 30deg;
+}
+
+.about-grid-cell--photos .photo-stack-item--4072 {
+  z-index: 4;
+  --ox: 56px;
+  --oy: -280px;
+  --photo-r: 19.43deg;
+  --ox-hover: 14px;
+  --oy-hover: -512px;
+  --photo-r-hover: 46.25deg;
+}
+
+.about-grid-cell--photos .photo-stack-item--3908 {
+  z-index: 5;
+  --ox: 80px;
+  --oy: 252px;
+  --photo-r: -9.48deg;
+  --ox-hover: 260px;
+  --oy-hover: 420px;
+  --photo-r-hover: 24.56deg;
 }
 
 .about-card-media {
@@ -152,35 +264,11 @@
   height: auto;
 }
 
-/* Figma Component 150: report UI inset ~40px in 660×660 */
+/* Figma Component 150: Ask Cobalt UI at (40, 40) / 874.92×580 in a 660×660 card */
 .about-card-media--report {
-  top: -6px;
-  right: calc(40 / 660 * 100%);
+  top: calc(40 / 660 * 100%);
   left: calc(40 / 660 * 100%);
-  height: fit-content;
-  border-radius: 0;
-}
-
-.about-card-media--report img {
-  height: 100%;
-  object-fit: cover;
-  object-position: top center;
-}
-
-/* Chat UI: 40px inset from top, bottom, and left */
-.about-card-media--chat {
-  top: 40px;
-  bottom: 40px;
-  left: 40px;
-  height: auto;
-  width: auto;
-  border-radius: 23px;
-  transform: translateY(var(--media-lift));
-}
-
-.about-card-media--chat img {
-  width: auto;
-  height: 100%;
+  width: calc(874.915 / 660 * 100%);
 }
 
 /* Figma Component 155: design system at (40, 29) / 580 wide in 660×320 */
@@ -230,14 +318,6 @@
     0 12px 24px rgba(255, 130, 80, 0.08);
 }
 
-.about-grid-cell--tall:hover .about-card-media--chat,
-.about-grid-cell--tall:focus-within .about-card-media--chat {
-  --media-lift: -10px;
-  box-shadow:
-    0 24px 48px rgba(83, 87, 248, 0.12),
-    0 12px 24px rgba(120, 124, 255, 0.07);
-}
-
 .about-grid-cell--design:hover .about-card-media--design,
 .about-grid-cell--design:focus-within .about-card-media--design {
   --media-lift: -10px;
@@ -263,19 +343,14 @@
     grid-row: 3;
   }
 
-  .about-grid-cell--tall {
+  .about-grid-cell--showcase {
     grid-column: 1;
     grid-row: 4 / 6;
   }
 
   .about-grid-cell--photos {
     grid-column: 2;
-    grid-row: 4;
-  }
-
-  .about-grid-cell--showcase {
-    grid-column: 2;
-    grid-row: 5;
+    grid-row: 4 / 6;
   }
 
   .about-grid-cell--checkout {
@@ -299,7 +374,6 @@
 
   .about-grid-cell--intro,
   .about-grid-cell--market,
-  .about-grid-cell--tall,
   .about-grid-cell--photos,
   .about-grid-cell--showcase,
   .about-grid-cell--checkout,
@@ -314,8 +388,9 @@
     aspect-ratio: 1;
   }
 
-  .about-grid-cell--tall {
-    min-height: 280px;
+  .about-grid-cell--showcase,
+  .about-grid-cell--photos {
+    min-height: 420px;
   }
 
   .about-grid-cell--design {
