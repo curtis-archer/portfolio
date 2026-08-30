@@ -6,6 +6,7 @@ import { CheckoutRedesignPage } from './pages/CheckoutRedesignPage'
 import { CompetitiveIntelligencePage } from './pages/CompetitiveIntelligencePage'
 import { DataVisualizationsPage } from './pages/DataVisualizationsPage'
 import { HomePage } from './pages/HomePage'
+import { ResumePage } from './pages/ResumePage'
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<AboutPage />} />
+        <Route path="/resume" element={<ResumePage />} />
         <Route
           path="/competitive-intelligence"
           element={<CompetitiveIntelligencePage />}

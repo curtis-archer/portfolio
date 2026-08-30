@@ -2,6 +2,8 @@ import { useState } from 'react'
 import { Nav } from '../components/Nav'
 import './AboutPage.css'
 
+const RESUME_HREF = `${import.meta.env.BASE_URL}resume`
+
 const ROLES = [
   {
     id: 'staff',
@@ -107,8 +109,9 @@ export function AboutPage() {
             <div className="about-resume-wrap">
               <a
                 className="about-resume"
-                href="/assets/About/Curtis-Archer-Resume.pdf"
-                download="Curtis-Archer-Resume.pdf"
+                href={RESUME_HREF}
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 Download my resume
               </a>
