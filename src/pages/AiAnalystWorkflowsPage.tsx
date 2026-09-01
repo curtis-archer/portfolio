@@ -9,6 +9,25 @@ const TEAM = ['John Arstingstall', 'Salim Hamed', 'Ivan Bernatovic']
 const ASSET = '/assets/Ask Cobalt'
 const LIGHTBULB = `${ASSET}/${encodeURIComponent('lightbulb-02.svg')}`
 
+const IA = [
+  {
+    title: 'New Chat',
+    body: 'Trigger to start a new session.',
+  },
+  {
+    title: 'Schedules',
+    body: 'Sessions triggered on a schedule with a saved prompt.',
+  },
+  {
+    title: 'Sessions',
+    body: 'Individual chat conversation linked to a user. The session is saved and can be revisited.',
+  },
+  {
+    title: 'Artifacts',
+    body: 'Any object that is created within a chat session. This could be a PDF report, Excel export, etc. Tied to a user, but is shareable.',
+  },
+] as const
+
 function askAsset(file: string) {
   return `${ASSET}/${encodeURIComponent(file)}`
 }
@@ -21,8 +40,11 @@ function ImpactMetrics({ labelledBy }: { labelledBy?: string }) {
       aria-labelledby={labelledBy}
     >
       <div className="case-study-impact-item">
-        <p className="case-study-impact-value">+75%</p>
-        <p className="case-study-label">New customer closing rate</p>
+        <div className="case-study-impact-value-block">
+          <p className="case-study-impact-value">+75%</p>
+          <p className="case-study-impact-delta">~20% → ~35%</p>
+        </div>
+        <p className="case-study-label">Closing rate improvement</p>
       </div>
       <div className="case-study-impact-item">
         <p className="case-study-impact-value">60%</p>
@@ -174,10 +196,10 @@ export function AiAnalystWorkflowsPage() {
           <section className="case-study-story-block">
             <h2 className="case-study-story-title">First Steps</h2>
             <p className="case-study-text">
-              We explored two paths in parallel: a deterministic experience,
-              where we defined the questions and outputs, and a
-              non-deterministic experience, where customers could ask their own
-              questions.
+              We explored two paths in parallel: a deterministic experience, in
+              which we defined the questions and outputs, and a
+              non-deterministic experience, in which customers could ask their
+              own questions.
             </p>
 
             <div className="case-study-path-stack">
@@ -191,14 +213,14 @@ export function AiAnalystWorkflowsPage() {
                   against their market.
                 </p>
                 <p className="case-study-text">
-                  I designed the structure and visualizations to tell the story
-                  of the data, while AI analyzed and summarized the results into
-                  a digestible report that customers could share with their
-                  teams.
+                  I designed the structure and visualizations to tell the
+                  data&apos;s story, while AI analyzed and summarized the
+                  results into a digestible report that customers could share
+                  with their teams.
                 </p>
                 <p className="case-study-text">
-                  Even though the output was predetermined, designing it was
-                  highly iterative because of the variable nature of LLM
+                  Even though the workflow output was predetermined, the design
+                  process was highly iterative due to the variability of LLM
                   responses. Rather than handing engineering a finished report, I
                   started with a structured outline and iterated on the
                   experience as the underlying functionality came to life.
@@ -222,7 +244,9 @@ export function AiAnalystWorkflowsPage() {
                 <p className="case-study-text">
                   To explore the other direction, an engineer built an early
                   version of a Cobalt MCP that allowed customers to interact
-                  with our data through a chat interface.
+                  with our data through a chat interface. By focusing solely on
+                  the MCP, we could gather user feedback without building our
+                  own chat experience.
                 </p>
                 <p className="case-study-text">
                   We started small, but as soon as we showed it to customers,
@@ -294,16 +318,12 @@ export function AiAnalystWorkflowsPage() {
           </section>
 
           <section className="case-study-story-block">
-            <h2 className="case-study-story-title">Building a chat prototype</h2>
+            <h2 className="case-study-story-title">AI chat beta</h2>
             <p className="case-study-text">
-              I wanted to get the chat experience into customers&apos; hands as
-              quickly as possible so we could learn what they actually wanted
-              from it.
-            </p>
-            <p className="case-study-text">
-              Instead of spending weeks designing every screen and state
-              upfront, I worked closely with an engineer to create a simple chat
-              experience connected to the same data as our MCP.
+              With the goal of releasing a beta version of the asap, I worked
+              closely with an engineer to create a simple chat experience
+              connected to the same data as our MCP, rather than spending weeks
+              designing every screen and state up front.
             </p>
             <p className="case-study-text">
               Once the basic functionality was working, I used Cursor to
@@ -312,18 +332,10 @@ export function AiAnalystWorkflowsPage() {
               than designing against assumptions.
             </p>
             <p className="case-study-text">
-              Together, we turned a rough engineering prototype into a polished
-              beta that we could put in front of customers.
-            </p>
-          </section>
-
-          <section className="case-study-story-block">
-            <h2 className="case-study-story-title">Live chat beta</h2>
-            <p className="case-study-text">
-              The response was immediate. Customers were using the chat to
-              uncover insights they felt they would have missed in the past,
-              while feedback quickly expanded into requests for capabilities
-              like recurring prompts and automated analysis.
+              After launch, the response was immediate. Customers told us they
+              uncovered insights they would have missed in the past. Usage
+              steadily grew, and requests for capabilities like recurring
+              prompts and automated analysis poured in.
             </p>
             <StoryImage
               file="AI Analyst.png"
@@ -331,15 +343,17 @@ export function AiAnalystWorkflowsPage() {
             />
             <p className="case-study-text">
               Usage grew rapidly, with customers who tried the chat consistently
-              returning week after week. But the rapid pace of experimentation
-              had created another problem: Cobalt&apos;s AI experience was
-              becoming fragmented.
+              returning week after week.
+            </p>
+            <p className="case-study-text">
+              But the rapid pace of experimentation had created another problem:{' '}
+              <strong>Cobalt&apos;s AI experience was becoming fragmented.</strong>
             </p>
             <p className="case-study-text">
               We had AI Analyst, where the original deterministic reports lived,
               and Chat existed as a tab within it. Chat couldn&apos;t trigger
-              the reports, and users couldn&apos;t ask follow-up questions about
-              insights in a report.
+              reports, and users couldn&apos;t ask follow-up questions about
+              report insights.
             </p>
             <p className="case-study-text">
               At the same time, we knew we wanted to introduce new concepts like
@@ -356,9 +370,16 @@ export function AiAnalystWorkflowsPage() {
               for how conversations, generated outputs, and scheduled tasks
               should relate to each other:
             </p>
-            <p className="case-study-text">
-              <strong>New Chat → Session → Artifacts</strong>
-            </p>
+            <div className="case-study-ia">
+              <div className="case-study-ia-grid">
+                {IA.map((item) => (
+                  <div key={item.title} className="case-study-ia-col">
+                    <p className="case-study-ia-title">{item.title}</p>
+                    <p className="case-study-ia-text">{item.body}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
             <p className="case-study-text">
               From there, I worked through the experience to make sure the
               interaction patterns, terminology, context, and copy were
@@ -403,12 +424,14 @@ export function AiAnalystWorkflowsPage() {
             </h2>
             <ImpactMetrics labelledBy="ask-cobalt-outcome" />
             <p className="case-study-text">
-              Since launching Ask Cobalt, we saw our{' '}
+              Since launching Ask Cobalt, we have seen our{' '}
               <strong>new account close rate jump from ~20% to ~35%</strong>,
-              users average{' '}
-              <strong>3.2 chat sessions per week per user</strong> indicating
-              stickiness, and AI tools now account for{' '}
-              <strong>60%+ of new customer purchase reasons</strong>.
+              and AI tools now account for{' '}
+              <strong>60%+ of new customer purchase reasons</strong> because
+              prospects can see the value of Cobalt more quickly and easily in
+              the sales process. We also saw that users started an average of{' '}
+              <strong>3.2 chat sessions per week per user</strong>, indicating
+              stickiness.
             </p>
             <p className="case-study-text">
               Ask Cobalt was unlike any product I had worked on before.
@@ -419,9 +442,9 @@ export function AiAnalystWorkflowsPage() {
             <p className="case-study-text">
               More importantly, it changed how I think about the relationship
               between design and development. Rather than designing everything
-              upfront and handing it off, I increasingly worked alongside
-              engineering, using prototypes, code, and real customer feedback to
-              shape the product together.
+              up front and handing it off, I increasingly worked alongside
+              engineering teams, using prototypes, code, and real customer
+              feedback to shape the product together.
             </p>
             <p className="case-study-text">
               <strong>
