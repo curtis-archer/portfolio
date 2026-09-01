@@ -264,11 +264,153 @@
   height: auto;
 }
 
-/* Figma Component 150: Ask Cobalt UI at (40, 40) / 874.92×580 in a 660×660 card */
+/* Figma Component 162: dashboard PNG at (-1273, -575) / 1893×1195 in a 660×660 card */
 .about-card-media--report {
-  top: calc(40 / 660 * 100%);
-  left: calc(40 / 660 * 100%);
-  width: calc(874.915 / 660 * 100%);
+  top: calc(-575 / 660 * 100%);
+  left: calc(-1273 / 660 * 100%);
+  width: calc(1893 / 660 * 100%);
+  border-radius: 17px;
+}
+
+/* Figma Floating CTA: outer scales to the tile; inner lifts on hover */
+.about-card-ask-cta {
+  position: absolute;
+  z-index: 1;
+  right: calc(69.41 / 660 * 100%);
+  bottom: calc(71.56 / 660 * 100%);
+  width: max-content;
+  pointer-events: none;
+  transform: scale(calc(100cqw / 660));
+  transform-origin: bottom right;
+}
+
+.about-card-ask-cta-surface {
+  --cta-pad: 13.777px;
+  display: flex;
+  align-items: center;
+  gap: 18.37px;
+  padding: var(--cta-pad) 27.555px var(--cta-pad) var(--cta-pad);
+  overflow: hidden;
+  background: #fff;
+  border: 2.296px solid #d7d7ff;
+  border-radius: 32.147px;
+  box-shadow:
+    0 9.185px 43.628px rgba(0, 0, 0, 0.1),
+    0 -6.889px 32.147px -13.777px rgba(130, 5, 255, 0.1),
+    0 13.777px 32.147px -13.777px rgba(0, 119, 255, 0.1);
+  transform: translateY(0);
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.about-card-ask-cta-icon {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 68.886px;
+  height: 68.886px;
+  background: linear-gradient(to bottom, #715aff, #6249ff);
+  border-radius: 18.37px;
+}
+
+.about-card-ask-cta-star {
+  position: relative;
+  flex-shrink: 0;
+  width: 52.813px;
+  height: 52.813px;
+  animation: about-ask-star-wiggle 3s infinite;
+}
+
+.about-card-ask-cta-star img {
+  position: absolute;
+  top: -19.64%;
+  left: -14.9%;
+  width: 129.77%;
+  max-width: none;
+  height: 139.29%;
+}
+
+.about-card-ask-cta-text {
+  display: flex;
+  flex-shrink: 0;
+  flex-direction: column;
+  align-items: flex-start;
+  font-family: var(--font-proxima);
+  font-variant-numeric: lining-nums tabular-nums;
+}
+
+.about-card-ask-cta-title,
+.about-card-ask-cta-shortcut {
+  margin: 0;
+}
+
+.about-card-ask-cta-title {
+  margin-bottom: -4.592px;
+  font-size: 29.851px;
+  font-weight: 700;
+  line-height: 1.53;
+  color: rgba(0, 0, 0, 0.65);
+}
+
+.about-card-ask-cta-shortcut {
+  display: flex;
+  align-items: center;
+  height: 29.851px;
+  font-size: 25.258px;
+  font-weight: 400;
+  line-height: 1.53;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+@keyframes about-ask-star-wiggle {
+  0% {
+    transform: rotate(0deg);
+    animation-timing-function: linear;
+  }
+
+  33.33% {
+    transform: rotate(0deg);
+    animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+  }
+
+  36.67% {
+    transform: rotate(-12deg);
+    animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+  }
+
+  40% {
+    transform: rotate(12deg);
+    animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+  }
+
+  43.33% {
+    transform: rotate(-8deg);
+    animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+  }
+
+  46.67% {
+    transform: rotate(8deg);
+    animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+  }
+
+  50% {
+    transform: rotate(-4deg);
+    animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+  }
+
+  53.33% {
+    transform: rotate(4deg);
+    animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+  }
+
+  57.33% {
+    transform: rotate(0deg);
+    animation-timing-function: linear;
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
 }
 
 /* Figma Component 155: design system at (40, 29) / 580 wide in 660×320 */
@@ -278,12 +420,9 @@
   width: calc(580 / 660 * 100%);
 }
 
-.about-grid-cell--intro:hover .about-card-media--report,
-.about-grid-cell--intro:focus-within .about-card-media--report {
-  --media-lift: -10px;
-  box-shadow:
-    0 24px 48px rgba(83, 87, 248, 0.12),
-    0 12px 24px rgba(120, 124, 255, 0.07);
+.about-grid-cell--intro:hover .about-card-ask-cta-surface,
+.about-grid-cell--intro:focus-within .about-card-ask-cta-surface {
+  transform: translateY(-10px);
 }
 
 /* Crop matches Figma: checkout UI at (-187, 42) / 804×576 in a square card */

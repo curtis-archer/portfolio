@@ -15,9 +15,22 @@ export function AboutGrid() {
       >
         <div className="about-card-media about-card-media--report">
           <img
-            src="/assets/Home/Ask-Cobalt-Hero-Home.png"
-            alt="Ask Cobalt benchmarking report workflow"
+            src="/assets/Home/Ask-Cobalt-Segment.png"
+            alt="Ask Cobalt category insights dashboard"
           />
+        </div>
+        <div className="about-card-ask-cta" aria-hidden="true">
+          <div className="about-card-ask-cta-surface">
+            <div className="about-card-ask-cta-icon">
+              <span className="about-card-ask-cta-star">
+                <img src="/assets/Home/star-05.svg" alt="" />
+              </span>
+            </div>
+            <div className="about-card-ask-cta-text">
+              <p className="about-card-ask-cta-title">Ask Cobalt</p>
+              <p className="about-card-ask-cta-shortcut">Shift + k</p>
+            </div>
+          </div>
         </div>
       </ProjectCard>
 
