@@ -30,6 +30,28 @@
 
 .about-grid-cell .project-card {
   height: 100%;
+  animation: page-enter 250ms var(--ease-out) both;
+  animation-delay: 200ms;
+}
+
+.about-grid-cell:nth-child(2) .project-card {
+  animation-delay: 250ms;
+}
+
+.about-grid-cell:nth-child(3) .project-card {
+  animation-delay: 300ms;
+}
+
+.about-grid-cell:nth-child(4) .project-card {
+  animation-delay: 350ms;
+}
+
+.about-grid-cell:nth-child(5) .project-card {
+  animation-delay: 400ms;
+}
+
+.about-grid-cell:nth-child(6) .project-card {
+  animation-delay: 450ms;
 }
 
 .about-grid-cell .project-card-arrow {
@@ -570,5 +592,13 @@
     left: 24px;
     transform: scale(0.72);
     transform-origin: top left;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-grid-cell .project-card {
+    animation-name: page-enter-fade;
+    animation-duration: 200ms;
+    animation-delay: 0s;
   }
 }
