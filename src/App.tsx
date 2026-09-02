@@ -6,6 +6,7 @@ import { AiAnalystWorkflowsPage } from './pages/AiAnalystWorkflowsPage'
 import { CheckoutRedesignPage } from './pages/CheckoutRedesignPage'
 import { CompetitiveIntelligencePage } from './pages/CompetitiveIntelligencePage'
 import { DataVisualizationsPage } from './pages/DataVisualizationsPage'
+import { DesignSystemPage } from './pages/DesignSystemPage'
 import { HomePage } from './pages/HomePage'
 import { ResumePage } from './pages/ResumePage'
 
@@ -37,6 +38,7 @@ function AppShell() {
           path="/data-visualizations"
           element={<DataVisualizationsPage />}
         />
+        <Route path="/design-system" element={<DesignSystemPage />} />
       </Routes>
     </>
   )

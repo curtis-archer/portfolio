@@ -21,6 +21,25 @@
   user-select: none;
 }
 
+.before-after--natural {
+  position: relative;
+  inset: auto;
+  width: 100%;
+  height: auto;
+}
+
+.before-after--natural .before-after-image--base {
+  position: relative;
+  inset: auto;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.before-after--natural .before-after-before .before-after-image {
+  object-fit: contain;
+}
+
 .before-after-before {
   position: absolute;
   inset: 0;
