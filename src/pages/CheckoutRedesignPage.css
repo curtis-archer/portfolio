@@ -6,6 +6,8 @@
   padding: 12px 0;
   border-top: 1px dashed rgba(0, 0, 0, 0.14);
   border-bottom: 1px dashed rgba(0, 0, 0, 0.14);
+  animation: page-enter 250ms var(--ease-out) both;
+  animation-delay: 100ms;
 }
 
 .case-study-impact-item {
@@ -189,5 +191,13 @@
   .case-study-data-split,
   .case-study-final-split {
     flex-direction: column;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .case-study-impact {
+    animation-name: page-enter-fade;
+    animation-duration: 200ms;
+    animation-delay: 0s;
   }
 }

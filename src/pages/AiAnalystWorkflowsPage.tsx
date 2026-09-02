@@ -1,4 +1,3 @@
-import { Nav } from '../components/Nav'
 import './CompetitiveIntelligencePage.css'
 import './DataVisualizationsPage.css'
 import './CheckoutRedesignPage.css'
@@ -93,7 +92,6 @@ function StoryImage({
 export function AiAnalystWorkflowsPage() {
   return (
     <div className="page">
-      <Nav />
       <article className="case-study">
         <header className="case-study-intro">
           <div className="case-study-intro-inner">

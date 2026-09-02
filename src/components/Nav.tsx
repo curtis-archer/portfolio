@@ -18,20 +18,27 @@ export function Nav() {
         <Link to="/" className="nav-logo" aria-label="Home">
           <img src="/assets/logo.svg" alt="" width={31} height={20} />
         </Link>
-        <Link
-          to="/#work"
-          className={`nav-link${isWorkActive ? ' nav-link--active' : ''}`}
-          aria-current={isWorkActive ? 'page' : undefined}
-        >
-          Work
-        </Link>
-        <Link
-          to="/about"
-          className={`nav-link${isAboutActive ? ' nav-link--active' : ''}`}
-          aria-current={isAboutActive ? 'page' : undefined}
-        >
-          About
-        </Link>
+        <div className="nav-tabs">
+          <span
+            className="nav-thumb"
+            data-active={isAboutActive ? 'about' : 'work'}
+            aria-hidden="true"
+          />
+          <Link
+            to="/#work"
+            className={`nav-link${isWorkActive ? ' nav-link--active' : ''}`}
+            aria-current={isWorkActive ? 'page' : undefined}
+          >
+            Work
+          </Link>
+          <Link
+            to="/about"
+            className={`nav-link${isAboutActive ? ' nav-link--active' : ''}`}
+            aria-current={isAboutActive ? 'page' : undefined}
+          >
+            About
+          </Link>
+        </div>
       </nav>
     </header>
   )

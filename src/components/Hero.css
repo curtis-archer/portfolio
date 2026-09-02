@@ -21,6 +21,11 @@
   color: var(--color-text);
 }
 
+.hero-title,
+.hero-actions {
+  animation: page-enter 250ms var(--ease-out) both;
+}
+
 .hero-title-primary {
   font-weight: 700;
 }
@@ -42,6 +47,7 @@
   border: 1px solid var(--color-border);
   border-radius: 40px;
   background: #ffffff;
+  animation-delay: 50ms;
 }
 
 .hero-btn {
@@ -124,6 +130,15 @@
   width: 20px;
   height: 20px;
   flex-shrink: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-title,
+  .hero-actions {
+    animation-name: page-enter-fade;
+    animation-duration: 200ms;
+    animation-delay: 0s;
+  }
 }
 
 @media (max-width: 640px) {

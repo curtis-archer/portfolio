@@ -1,4 +1,3 @@
-import { Nav } from '../components/Nav'
 import './CompetitiveIntelligencePage.css'
 import './DataVisualizationsPage.css'
 
@@ -15,7 +14,6 @@ const HEART = `${ASSET}/insight-heart.svg`
 export function DataVisualizationsPage() {
   return (
     <div className="page">
-      <Nav />
       <article className="case-study">
         <header className="case-study-intro">
           <div className="case-study-intro-inner">

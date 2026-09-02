@@ -31,6 +31,43 @@
   color: var(--color-text);
 }
 
+.about-section:not(.about-section--experience) .about-heading,
+.about-photo,
+.about-copy {
+  animation: page-enter 250ms var(--ease-out) both;
+}
+
+.about-photo {
+  animation-delay: 50ms;
+}
+
+.about-copy {
+  animation-delay: 100ms;
+}
+
+.about-section--experience .about-heading,
+.about-resume-wrap {
+  animation: page-enter 250ms var(--ease-out) both;
+  animation-delay: 200ms;
+}
+
+.about-jobs > li {
+  animation: page-enter 250ms var(--ease-out) both;
+  animation-delay: 250ms;
+}
+
+.about-jobs > li:nth-child(2) {
+  animation-delay: 300ms;
+}
+
+.about-jobs > li:nth-child(3) {
+  animation-delay: 350ms;
+}
+
+.about-jobs > li:nth-child(4) {
+  animation-delay: 400ms;
+}
+
 .about-photo {
   width: 100%;
   max-width: 412px;
@@ -265,6 +302,17 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .about-section:not(.about-section--experience) .about-heading,
+  .about-photo,
+  .about-copy,
+  .about-section--experience .about-heading,
+  .about-resume-wrap,
+  .about-jobs > li {
+    animation-name: page-enter-fade;
+    animation-duration: 200ms;
+    animation-delay: 0s;
+  }
+
   .about-job,
   .about-job-collapse,
   .about-job-description,
