@@ -98,7 +98,8 @@ export function AboutGrid() {
 
       <ProjectCard
         className="about-grid-cell about-grid-cell--design"
-        href="/design-system"
+        asStatic
+        hideArrow
         title="Introduction of Jungle Scout’s first design system"
         kind="Showcase"
         description="A look at the visual impact of a new design system aimed at creating consistency and improving visual polish."

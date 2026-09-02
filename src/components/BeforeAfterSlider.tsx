@@ -1,6 +1,5 @@
 import {
   useCallback,
-  useId,
   useRef,
   useState,
   type CSSProperties,
@@ -15,7 +14,6 @@ type BeforeAfterSliderProps = {
   beforeAlt: string
   afterAlt: string
   className?: string
-  ariaLabel?: string
 }
 
 export function BeforeAfterSlider({
@@ -24,9 +22,7 @@ export function BeforeAfterSlider({
   beforeAlt,
   afterAlt,
   className,
-  ariaLabel = 'Compare before and after designs',
 }: BeforeAfterSliderProps) {
-  const descId = useId()
   const containerRef = useRef<HTMLDivElement>(null)
   const draggingRef = useRef(false)
   const [position, setPosition] = useState(50)
@@ -88,21 +84,21 @@ export function BeforeAfterSlider({
       onKeyDown={onKeyDown}
       role="slider"
       tabIndex={0}
-      aria-label={ariaLabel}
+      aria-label="Compare before and after checkout designs"
       aria-valuemin={0}
       aria-valuemax={100}
       aria-valuenow={Math.round(position)}
       aria-valuetext={`${Math.round(position)}% before, ${Math.round(100 - position)}% after`}
-      aria-describedby={descId}
+      aria-describedby="before-after-desc"
     >
-      <p id={descId} className="before-after-sr-only">
+      <p id="before-after-desc" className="before-after-sr-only">
         {beforeAlt}. {afterAlt}. Drag or use arrow keys to reveal each version.
       </p>
 
       <img
         src={afterSrc}
         alt=""
-        className="before-after-image before-after-image--base"
+        className="before-after-image"
         draggable={false}
       />
 
