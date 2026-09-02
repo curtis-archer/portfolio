@@ -11,7 +11,9 @@ export function AboutGrid() {
         className="about-grid-cell about-grid-cell--intro"
         href="/ai-analyst-workflows"
         variant="benchmark"
-        hideArrow
+        title="Conversational Market Intelligence"
+        kind="Case Study"
+        description="A 0→1 AI product where I led design and PM to ship Cobalt’s first AI tools."
       >
         <div className="about-card-media about-card-media--report">
           <img
@@ -37,7 +39,9 @@ export function AboutGrid() {
       <ProjectCard
         className="about-grid-cell about-grid-cell--market"
         href="/competitive-intelligence"
-        hideArrow
+        title="From scattered data to one workflow"
+        kind="Showcase"
+        description="Led design of a new Catalyst feature that transformed dense datasets into a clear story."
       >
         <div className="about-card-dashboard">
           <DashboardStrip
@@ -51,7 +55,9 @@ export function AboutGrid() {
       <ProjectCard
         className="about-grid-cell about-grid-cell--showcase"
         href="/data-visualizations"
-        hideArrow
+        title="Charts sellers could actually read"
+        kind="Case Study"
+        description="How I improved data comprehension through customer feedback and iteration."
       >
         <div className="about-card-showcase">
           <ShowcaseStack layout="tall" />
@@ -78,7 +84,9 @@ export function AboutGrid() {
       <ProjectCard
         className="about-grid-cell about-grid-cell--checkout"
         href="/checkout-redesign"
-        hideArrow
+        title="Reducing churn by improving trust"
+        kind="Case Study"
+        description="A support-ticket diagnosis turned into a checkout redesign resulting in a drastic churn reduction."
       >
         <div className="about-card-checkout">
           <img
@@ -92,6 +100,9 @@ export function AboutGrid() {
         className="about-grid-cell about-grid-cell--design"
         asStatic
         hideArrow
+        title="Introduction of Jungle Scout’s first design system"
+        kind="Showcase"
+        description="A look at the visual impact of a new design system aimed at creating consistency and improving visual polish."
       >
         <div className="about-card-media about-card-media--design">
           <img

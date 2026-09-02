@@ -15,6 +15,7 @@ type ProjectCardProps = {
   showLogo?: boolean
   href?: string
   title?: string
+  kind?: string
   description?: string
   variant?: 'default' | 'benchmark'
   className?: string
@@ -30,6 +31,7 @@ export function ProjectCard({
   showLogo = false,
   href = '#',
   title,
+  kind,
   description,
   variant = 'default',
   className = '',
@@ -104,11 +106,25 @@ export function ProjectCard({
         </a>
       )}
 
-      {title && description && (
-        <p className="project-card-caption">
-          <strong>{title}</strong>
-          <span>{description}</span>
-        </p>
+      {(title || description) && (
+        <div className="project-card-caption">
+          {title && (
+            <p className="project-card-caption-title">
+              <strong>{title}</strong>
+              {kind && (
+                <>
+                  <span className="project-card-caption-pipe" aria-hidden="true">
+                    |
+                  </span>
+                  <span className="project-card-caption-kind">{kind}</span>
+                </>
+              )}
+            </p>
+          )}
+          {description && (
+            <p className="project-card-caption-body">{description}</p>
+          )}
+        </div>
       )}
     </div>
   )
