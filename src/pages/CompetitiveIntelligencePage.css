@@ -25,6 +25,7 @@
   gap: 12px;
   padding-bottom: 20px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  animation: page-enter 250ms var(--ease-out) both;
 }
 
 .case-study-title {
@@ -47,6 +48,8 @@
   display: flex;
   gap: 31px;
   align-items: flex-start;
+  animation: page-enter 250ms var(--ease-out) both;
+  animation-delay: 50ms;
 }
 
 .case-study-meta {
@@ -121,6 +124,23 @@
   display: flex;
   gap: 20px;
   width: 100%;
+}
+
+.case-study-gallery:first-of-type .case-study-gallery-row {
+  animation: page-enter 250ms var(--ease-out) both;
+  animation-delay: 200ms;
+}
+
+.case-study-gallery:first-of-type .case-study-gallery-row:nth-child(2) {
+  animation-delay: 250ms;
+}
+
+.case-study-gallery:first-of-type .case-study-gallery-row:nth-child(3) {
+  animation-delay: 300ms;
+}
+
+.case-study-gallery:first-of-type .case-study-gallery-row:nth-child(4) {
+  animation-delay: 350ms;
 }
 
 .case-study-gallery-row--focus,
@@ -387,5 +407,15 @@
   .case-study-subtitle {
     font-size: 18px;
     line-height: 1.5;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .case-study-header,
+  .case-study-details,
+  .case-study-gallery:first-of-type .case-study-gallery-row {
+    animation-name: page-enter-fade;
+    animation-duration: 200ms;
+    animation-delay: 0s;
   }
 }
