@@ -1,4 +1,5 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom'
+import { Nav } from './components/Nav'
 import { ScrollToTop } from './components/ScrollToTop'
 import { AboutPage } from './pages/AboutPage'
 import { AiAnalystWorkflowsPage } from './pages/AiAnalystWorkflowsPage'
@@ -8,10 +9,14 @@ import { DataVisualizationsPage } from './pages/DataVisualizationsPage'
 import { HomePage } from './pages/HomePage'
 import { ResumePage } from './pages/ResumePage'
 
-function App() {
+function AppShell() {
+  const { pathname } = useLocation()
+  const showNav = pathname !== '/resume'
+
   return (
-    <BrowserRouter>
+    <>
       <ScrollToTop />
+      {showNav ? <Nav /> : null}
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<AboutPage />} />
@@ -33,6 +38,14 @@ function App() {
           element={<DataVisualizationsPage />}
         />
       </Routes>
+    </>
+  )
+}
+
+function App() {
+  return (
+    <BrowserRouter>
+      <AppShell />
     </BrowserRouter>
   )
 }

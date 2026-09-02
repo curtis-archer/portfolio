@@ -1,4 +1,3 @@
-import { Nav } from '../components/Nav'
 import './CompetitiveIntelligencePage.css'
 
 const TEAM = [
@@ -11,7 +10,6 @@ const TEAM = [
 export function CompetitiveIntelligencePage() {
   return (
     <div className="page">
-      <Nav />
       <article className="case-study">
         <header className="case-study-intro">
           <div className="case-study-intro-inner">

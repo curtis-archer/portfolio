@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import { Nav } from '../components/Nav'
 import './AboutPage.css'
 
 const RESUME_HREF = `${import.meta.env.BASE_URL}resume`
@@ -44,7 +43,6 @@ export function AboutPage() {
 
   return (
     <div className="page">
-      <Nav />
       <main className="about-page">
         <section className="about-section" aria-labelledby="about-heading">
           <div className="about-layout">
