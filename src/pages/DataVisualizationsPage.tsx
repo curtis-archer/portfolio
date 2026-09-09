@@ -1,13 +1,6 @@
 import './CompetitiveIntelligencePage.css'
 import './DataVisualizationsPage.css'
 
-const TEAM = [
-  'Jeremy Biron',
-  'Katan Patel',
-  'Ravi Jaswali',
-  'Victor Ojukwu',
-]
-
 const ASSET = '/assets/Data-visualizations'
 const HEART = `${ASSET}/insight-heart.svg`
 
@@ -31,15 +24,6 @@ export function DataVisualizationsPage() {
                 <div className="case-study-block">
                   <p className="case-study-label">My Role</p>
                   <p className="case-study-text">Lead Product Designer</p>
-                </div>
-
-                <div className="case-study-block">
-                  <p className="case-study-label">Team</p>
-                  <ul className="case-study-team">
-                    {TEAM.map((name) => (
-                      <li key={name}>{name}</li>
-                    ))}
-                  </ul>
                 </div>
               </aside>
 

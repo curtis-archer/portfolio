@@ -3,8 +3,6 @@ import './DataVisualizationsPage.css'
 import './CheckoutRedesignPage.css'
 import './AiAnalystWorkflowsPage.css'
 
-const TEAM = ['John Arstingstall', 'Salim Hamed', 'Ivan Bernatovic']
-
 const ASSET = '/assets/Ask Cobalt'
 const LIGHTBULB = `${ASSET}/${encodeURIComponent('lightbulb-02.svg')}`
 
@@ -111,15 +109,6 @@ export function AiAnalystWorkflowsPage() {
                     <br />
                     Product Manager
                   </p>
-                </div>
-
-                <div className="case-study-block">
-                  <p className="case-study-label">Team</p>
-                  <ul className="case-study-team">
-                    {TEAM.map((name) => (
-                      <li key={name}>{name}</li>
-                    ))}
-                  </ul>
                 </div>
 
                 <div className="case-study-block">
