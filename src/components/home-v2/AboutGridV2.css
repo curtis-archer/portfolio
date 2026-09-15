@@ -1,0 +1,92 @@
+@property --overlay-fade {
+  syntax: '<color>';
+  inherits: false;
+  initial-value: #fafafa;
+}
+
+.about-grid--v2 .about-grid-cell--showcase .project-card-overlay-title {
+  max-width: none;
+  line-height: 1.18;
+}
+
+.about-grid--v2 .about-grid-cell--design .project-card-overlay {
+  padding: 30px;
+}
+
+.about-grid--v2 .about-grid-cell--market .about-card-dashboard {
+  top: 133px;
+}
+
+.about-grid--v2 .about-grid-cell--market .about-card-dashboard .metric-card {
+  height: 230px;
+}
+
+.about-grid--v2 .about-grid-cell--market .metric-card--market-share .chart-line,
+.about-grid--v2 .about-grid-cell--market .interactive-chart .chart-line {
+  top: 14%;
+  bottom: 34%;
+}
+
+.about-grid--v2 .about-card-media--design {
+  top: calc(159 / 320 * 100%);
+}
+
+.about-grid--v2 .about-grid-cell--showcase .showcase-stack-card--rating-back {
+  top: calc(401 / 660 * 100%);
+}
+
+.about-grid--v2 .about-grid-cell--showcase .showcase-stack-card--units {
+  top: calc(350 / 660 * 100%);
+}
+
+.about-grid--v2 .about-grid-cell--showcase .showcase-stack-card--price {
+  top: calc(313 / 660 * 100%);
+}
+
+.about-grid--v2 .about-grid-cell--showcase .showcase-stack-card--rating {
+  top: calc(281 / 660 * 100%);
+}
+
+.about-grid--v2 .about-grid-cell--showcase .showcase-stack-card--reviews {
+  top: calc(237 / 660 * 100%);
+}
+
+.about-grid--v2 .project-card-overlay--gradient {
+  --overlay-fade: #fafafa;
+  background: linear-gradient(
+    to bottom,
+    color-mix(in srgb, var(--overlay-fade) 90%, transparent) 29.327%,
+    color-mix(in srgb, var(--overlay-fade) 0%, transparent) 51.442%
+  );
+  transition: --overlay-fade 0.2s ease;
+}
+
+.about-grid--v2 .about-grid-cell--intro:hover .project-card-overlay--gradient,
+.about-grid--v2 .about-grid-cell--intro:focus-within .project-card-overlay--gradient {
+  --overlay-fade: #f5f6ff;
+}
+
+.about-grid--v2 .about-grid-cell--checkout:hover .project-card-overlay--gradient,
+.about-grid--v2 .about-grid-cell--checkout:focus-within .project-card-overlay--gradient {
+  --overlay-fade: #fff6ef;
+}
+
+@media (max-width: 640px) {
+  .about-grid--v2 .project-card-overlay {
+    padding: 24px;
+  }
+
+  .about-grid--v2 .about-grid-cell--design .project-card-overlay {
+    padding: 24px;
+  }
+
+  .about-grid--v2 .project-card-overlay-title {
+    font-size: 24px;
+    letter-spacing: -0.72px;
+  }
+
+  .about-grid--v2 .project-card-overlay-subtitle {
+    font-size: 18px;
+    letter-spacing: -0.54px;
+  }
+}

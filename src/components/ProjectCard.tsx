@@ -17,6 +17,9 @@ type ProjectCardProps = {
   title?: string
   kind?: string
   description?: string
+  overlayTitle?: string
+  overlaySubtitle?: string
+  overlayGradient?: boolean
   variant?: 'default' | 'benchmark'
   className?: string
   asStatic?: boolean
@@ -33,6 +36,9 @@ export function ProjectCard({
   title,
   kind,
   description,
+  overlayTitle,
+  overlaySubtitle,
+  overlayGradient = false,
   variant = 'default',
   className = '',
   asStatic = false,
@@ -64,6 +70,19 @@ export function ProjectCard({
       )}
 
       {children}
+
+      {(overlayTitle || overlaySubtitle) && (
+        <div
+          className={`project-card-overlay${overlayGradient ? ' project-card-overlay--gradient' : ''}`}
+        >
+          {overlayTitle ? (
+            <h2 className="project-card-overlay-title">{overlayTitle}</h2>
+          ) : null}
+          {overlaySubtitle ? (
+            <p className="project-card-overlay-subtitle">{overlaySubtitle}</p>
+          ) : null}
+        </div>
+      )}
 
       {preview && (
         <div className="project-card-preview">
