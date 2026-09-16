@@ -52,10 +52,10 @@ export function AboutPage() {
 
             <div className="about-photo">
               <img
-                src="/assets/About/About.png"
-                alt="Curtis Archer on a beach with a small dog"
+                src="/assets/About/Curtis-Self.jpg"
+                alt="Portrait of Curtis Archer"
                 width={412}
-                height={308}
+                height={549}
               />
             </div>
 

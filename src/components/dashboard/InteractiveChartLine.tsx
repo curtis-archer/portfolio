@@ -109,7 +109,11 @@ export function InteractiveChartLine({
             transform: 'translateX(-5px)',
           }}
         >
-          <div className="chart-hover-tooltip" role="tooltip">
+          <div
+            className="chart-hover-tooltip"
+            role="tooltip"
+            style={{ top: hoverState.dotTop }}
+          >
             <div className="chart-hover-tooltip-date">{hoverState.dateRange}</div>
             <div className="chart-hover-tooltip-body">
               <div className="chart-hover-tooltip-row">

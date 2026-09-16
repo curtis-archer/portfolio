@@ -1,0 +1,113 @@
+import { DashboardStrip } from '../dashboard/DashboardStrip'
+import { PhotoStack } from '../photos/PhotoStack'
+import { ProjectCard } from '../ProjectCard'
+import { ShowcaseStack } from '../showcase/ShowcaseStack'
+import '../AboutGrid.css'
+import './AboutGridV2.css'
+
+export function AboutGridV2() {
+  return (
+    <section id="work" className="about-grid about-grid--v2" aria-label="Work">
+      <ProjectCard
+        className="about-grid-cell about-grid-cell--intro"
+        href="/ai-analyst-workflows"
+        variant="benchmark"
+        overlayTitle="Ask Cobalt"
+        overlaySubtitle="A deep dive into the creation of Cobalt’s agentic experience."
+        overlayGradient
+      >
+        <div className="about-card-media about-card-media--report">
+          <img
+            src="/assets/Home/Ask-Cobalt-Segment.png"
+            alt="Ask Cobalt category insights dashboard"
+          />
+        </div>
+        <div className="about-card-ask-cta" aria-hidden="true">
+          <div className="about-card-ask-cta-surface">
+            <div className="about-card-ask-cta-icon">
+              <span className="about-card-ask-cta-star">
+                <img src="/assets/Home/star-05.svg" alt="" />
+              </span>
+            </div>
+            <div className="about-card-ask-cta-text">
+              <p className="about-card-ask-cta-title">Ask Cobalt</p>
+              <p className="about-card-ask-cta-shortcut">Shift + k</p>
+            </div>
+          </div>
+        </div>
+      </ProjectCard>
+
+      <ProjectCard
+        className="about-grid-cell about-grid-cell--market"
+        href="/competitive-intelligence"
+        overlayTitle="Competitive Intelligence"
+        overlaySubtitle="A showcase."
+      >
+        <div className="about-card-dashboard">
+          <DashboardStrip
+            showSecondaryMetrics={false}
+            interactiveChart
+            marketShareChartId="chart-gradient-market-v2"
+          />
+        </div>
+      </ProjectCard>
+
+      <ProjectCard
+        className="about-grid-cell about-grid-cell--showcase"
+        href="/data-visualizations"
+        overlayTitle="Chart Exploration"
+        overlaySubtitle="Improving data comprehension."
+      >
+        <div className="about-card-showcase">
+          <ShowcaseStack layout="tall" />
+        </div>
+      </ProjectCard>
+
+      <ProjectCard
+        className="about-grid-cell about-grid-cell--photos"
+        asStatic
+        hideArrow
+      >
+        <div className="about-card-photos">
+          <img
+            className="project-card-logo-mark"
+            src="/assets/logo-large.svg"
+            alt=""
+            width={65}
+            height={42}
+          />
+          <PhotoStack />
+        </div>
+      </ProjectCard>
+
+      <ProjectCard
+        className="about-grid-cell about-grid-cell--checkout"
+        href="/checkout-redesign"
+        overlayTitle="Check-out Redesign"
+        overlaySubtitle="Explore how I reduced churn by improving trust."
+        overlayGradient
+      >
+        <div className="about-card-checkout">
+          <img
+            src="/assets/checkout/LandingCheckout.png"
+            alt="Checkout redesign subscription summary"
+          />
+        </div>
+      </ProjectCard>
+
+      <ProjectCard
+        className="about-grid-cell about-grid-cell--design"
+        href="/design-system"
+        overlayTitle="Design System"
+        overlaySubtitle="A showcase."
+      >
+        <div className="about-card-media about-card-media--design">
+          <img
+            src="/assets/Home/design-system.png"
+            alt="Jungle Scout design system color foundations"
+          />
+        </div>
+      </ProjectCard>
+    </section>
+  )
+}
