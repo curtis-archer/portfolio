@@ -1,8 +1,14 @@
-import { useHomeVersion } from '../lib/homeVersion.ts'
-import { HomePageV1 } from './HomePageV1'
-import { HomePageV2 } from './HomePageV2'
+import { AboutGridV2 } from '../components/home-v2/AboutGridV2'
+import { Hero } from '../components/Hero'
+import '../App.css'
 
 export function HomePage() {
-  const { version } = useHomeVersion()
-  return version === 'v2' ? <HomePageV2 /> : <HomePageV1 />
+  return (
+    <div className="page">
+      <div className="page-body">
+        <Hero />
+        <AboutGridV2 />
+      </div>
+    </div>
+  )
 }
