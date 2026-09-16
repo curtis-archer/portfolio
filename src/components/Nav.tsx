@@ -7,7 +7,6 @@ export function Nav() {
   const isWorkActive =
     !isAboutActive &&
     (pathname === '/' ||
-      pathname === '/v2' ||
       pathname.startsWith('/competitive-intelligence') ||
       pathname.startsWith('/ai-analyst-workflows') ||
       pathname.startsWith('/checkout-redesign') ||
