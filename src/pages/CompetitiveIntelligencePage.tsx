@@ -22,7 +22,7 @@ export function CompetitiveIntelligencePage() {
 
                 <div className="case-study-block">
                   <p className="case-study-label">Date</p>
-                  <p className="case-study-text">2024</p>
+                  <p className="case-study-text">2025</p>
                 </div>
               </aside>
 
